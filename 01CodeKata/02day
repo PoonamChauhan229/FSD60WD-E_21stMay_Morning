@@ -1,0 +1,182 @@
+5!
+5*4*3*2*1
+120
+
+4!
+4*3*2*1
+24
+
+6!
+6*5*4*3*2*1
+720
+
+
+5
+1-5
+
+6
+1-6
+
+7
+1-7
+
+
+Loops in Javascript
+
+Infinite 💫
+
+Code keeps on running >>> System Crash
+
+for loop
+
+Syntax:
+for(){
+    //block of code 
+}
+
+()>>>initilization        >>> Start 
+  >>>Condition            >>> End/Stop     || true >> loop runs || false loop terminates              
+  >>>Increment/Decrement  >>> Increase/Decrease
+
+
+for(initilization;Condition;Increment/Decrement){
+    //block of code 
+}
+
+1
+2
+3
+4
+5
+6
+
+For loop >> initilization >> i j k
+
+Start Point          :1   Declare   i=1
+End Point            :6   (Greater than(>),(>=)/Less than(<),(<=)) ||i<=6 ||1<7
+Increment/Decrement  :Increment   i++
+
+for(var i=1;i<=6;i++){
+    //block of code 
+    console.log(i)
+}
+
+6 times
+i=1 ; 1<=6 >> true  || i++     >>1
+i=2 ; 2<=6 >> true  || i++     >>2
+i=3 ; 3<=6 >> true  || i++     >>3
+i=4 ; 4<=6 >> true  || i++     >>4
+i=5 ; 5<=6 >> true  || i++     >>5
+i=6 ; 6<=6 >> true  || i++     >>6
+i=7 ; 7<=6 >> false || loop terminates >>>}
+
+console.log(i)
+
+1-6
+Input >6
+var num=userInput[0]
+var fact=1;
+for(var i=1;i<=num;i++){
+    //console.log(i) // 
+    fact=fact*i
+    //console.log(fact)
+}
+console.log(fact)
+1*2*3*4*5*6
+
+i=1 ; 1<=6 >> true  || i++     >>fact=fact*i >> 1*1=1 >> fact=1
+
+i=2 ; 2<=6 >> true  || i++     >>fact=fact*i >> 1*2=2 >> fact=2
+
+i=3 ; 3<=6 >> true  || i++     >>fact=fact*i >> 2*3=6 >> fact=6
+
+i=4 ; 4<=6 >> true  || i++     >>fact=fact*i >> 6*4=24 >> fact=24
+
+i=5 ; 5<=6 >> true  || i++     >>fact=fact*i >> 24*5=120 >> fact=120
+
+i=6 ; 6<=6 >> true  || i++     >>fact=fact*i >> 120*6=720 >> fact=720
+
+i=7 ; 7<=6 >> false || loop terminates >>>}
+
+
+First 3 multiples of any Number
+
+Start Point          :1   Declare   i=1
+End Point            :3   (Greater than(>),(>=)/Less than(<),(<=)) ||i<=3 ||1<4
+Increment/Decrement  :Increment   i++
+
+for(var i=1;i<=3;i++){
+    console.log(i)
+}
+
+
+Push Method >> Array Method >> Adds the element at the end.
+var arr=[]
+arr.push(3)
+arr
+[3]
+
+arr.push(45)
+arr
+(2) [3, 45]
+
+arr.push("guvi")
+arr
+(3) [3, 45, 'guvi']
+
+
+var arr=["Preethi","Sai"]
+
+arr.push("Akash")
+arr
+(3) ['Preethi', 'Sai', 'Akash']
+
+arr.push("Uday","Chandan")
+arr
+(5) ['Preethi', 'Sai', 'Akash', 'Uday', 'Chandan']
+
+
+Math Methods...
+Math.max()
+Math.min()
+
+Math.max(1,2,3)
+3
+
+Math.max(14,2,3)
+14
+
+Math.max(14,200,3)
+200
+
+Math.max(14,200,300)
+300
+
+Math.max(14,200,4300)
+4300
+
+Math.max(14000,200,4300)
+14000
+
+Math.min(14000,200,4300)
+200
+
+Math.min(14,200,4300)
+14
+
+Math.min(14,2,4300)
+2
+
+Math.min(14,2,0)
+0
+
+Conditional Statement
+if 
+if else
+if else if else
+if else if else if else if........ else 
+
+if(condition){//block of code} 
+if(condition){//block of code}  else{//block of code}
+if(condition1){//block of code}  else if(condition2){//block of code}  else{//block of code}
+if else if else if else if........ else 

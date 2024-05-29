@@ -1,0 +1,95 @@
+" "  || ''> String 
+[]        > Array
+{}        > Object
+78        > Number
+true      > Boolean  
+false     > Boolean
+
+
+CodeKata 
+>>> 
+
+Input >> no , text >>> [String datatype]
+
+Array : heterogenoues datatype
+[] Square bracket
+[num,string,object,boolean]
+[67,89,70,"guvi","zoom",true,false]
+[90,89,78]
+
+var 
+let 
+const 
+
+var keyword >> JS introduced var keyword came alongwith
+var arr=
+var a=
+var b=
+var userInput=[90,89,78,"guvi",'12 14 15']
+index no >> start 0 .....
+0 90  > element is at 0th index
+1 89  > element is at 1st index
+2 78
+userInput[indexnum]
+
+89 > userInput[1]
+console.log(userInput[1])
+
+guvi > userInput[3]
+
+'12 14 15'> userInput[4]
+
+
+methods >>>()
+    split > string method > split an give an o/p inside an array || ()
+    join  > array method
+
+console.log(userInput[0])
+guvi 
+
+Split >
+
+'poonam'.split()
+>>['poonam']
+
+'poonam'.split("@")
+>>['poonam']
+
+'poonam'.split(" ")
+>>['poonam']
+
+'poonam'.split("")
+>>(6) ['p', 'o', 'o', 'n', 'a', 'm']
+
+'poon@am'.split("@")
+>>(2) ['poon', 'am']
+
+'p o o n a m'.split(" ")
+(6) ['p', 'o', 'o', 'n', 'a', 'm']
+
+Join method
+
+['p', 'o', 'o', 'n', 'a', 'm'].join("")
+>>'poonam'
+
+['p', 'o', 'o', 'n', 'a', 'm'].join("@")
+>>'p@o@o@n@a@m'
+
+['p', 'o', 'o', 'n', 'a', 'm'].join(",")
+>>'p,o,o,n,a,m'
+
+['p', 'o', 'o', 'n', 'a', 'm'].join(" ")
+>>'p o o n a m'
+
+['p', 'o', 'o', 'n', 'a', 'm'].join("_")
+>>'p_o_o_n_a_m'
+
+['p', 'o', 'o', 'n', 'a', 'm'].join("/")
+>>'p/o/o/n/a/m'
+
+['p', 'o', 'o', 'n', 'a', 'm'].join("+")
+>>'p+o+o+n+a+m'
+
+
+
+
