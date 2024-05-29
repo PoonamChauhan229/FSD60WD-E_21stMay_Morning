@@ -54,6 +54,73 @@
 
         console.log(10+10+10+'10'+10)//301010
 
+        // ||Composite Datatype
+        // Array  >> []
+        // Objects
+
+        //Array
+        // Array : heterogenoues datatype
+        // [] Square bracket
+        // [num,string,object,boolean]
+        // [67,89,70,"guvi","zoom",true,false]
+        // [90,89,78]
+
+        var arr=[67,89,70,"guvi","zoom",true,false,"Aakash","mute",78,90,890]
+        console.log(arr)
+        console.log(arr[3])
+        //get the last element of the array
+        console.log(arr[7])//false
+        
+        //length
+        console.log(arr.length)
+
+        //get the last element of the array
+        console.log(arr[arr.length-1])
+
+        arr[2]="Poonam"//index aws present
+        console.log(arr)
+
+        arr[12]="xyz"//index wasnt present
+        console.log(arr[12])
+        console.log(arr)
+
+        //Objects {}
+        var obj={
+            //key1 :value1
+            //key2 :value2
+            //key3  :value3
+        }
+        var stuObj={
+            name:"Aakash",
+            rolId:25,
+            course:"FSD",
+            learning:"Javacript",
+            place:["Mumbai","Chennai","Banglore"]
+        }
+        console.log(stuObj)
+        console.log(stuObj.course)
+        console.log(stuObj.rolId)
+        console.log(stuObj.learning)
+
+        stuObj.location="Chennai"
+        console.log(stuObj)
+
+        stuObj.name="Shivang"
+        console.log(stuObj)
+
+        // u have get the length of obj 
+        //Object > length
+        console.log(stuObj.length)
+
+        //Keys > Return all the Keys in an array
+        Object.keys
+        console.log(Object.keys(stuObj))
+        console.log(Object.keys(stuObj).length)
+        //Valuse > Retrun all the values in an arry
+        Object.values
+        console.log(Object.values(stuObj))
+        console.log(Object.values(stuObj).length)
+
 </script>
 </body>
 </html>
