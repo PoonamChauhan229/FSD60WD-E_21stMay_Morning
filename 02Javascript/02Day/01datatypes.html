@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<div id="abc"></div>
 <body>
     <!-- Datatypes of JS -->
     <!-- 
@@ -120,6 +121,35 @@
         Object.values
         console.log(Object.values(stuObj))
         console.log(Object.values(stuObj).length)
+
+        let xyzarray=[
+        {
+            name:"Aakash",
+            rolId:25,
+            course:"FSD",
+            learning:"Javacript",
+            place:["Mumbai","Chennai","Banglore"]
+        },
+        {
+            name:"Preethi",
+            rolId:25,
+            course:"FSD",
+            learning:"Javacript",
+            place:["Mumbai","Chennai","Banglore"]
+        }
+        ]
+{
+    xyzarray.map((element,index)=>{
+        // <p>{element.name}</p>
+        //TaskCard {...element}
+        let abc=document.getElementById('abc')
+        let ptag=document.createElement('p')
+        ptag.innerHTML+=element.name
+        abc.append(ptag)
+    })// 2 times
+ //   console.log(newarr)
+}
+
 
 </script>
 </body>

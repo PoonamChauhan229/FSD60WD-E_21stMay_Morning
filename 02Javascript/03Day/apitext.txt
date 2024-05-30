@@ -1,0 +1,25 @@
+  <!-- 
+        API ?
+        Application Programming InterFace
+
+        Restuarant  > Lunch Party
+        Steps:
+        Reservation Of Table
+        Reach To Restuarant/Table
+        Check Menu Card
+        Call the Waiter
+        Waiter will take the Order
+        Waiter will reach to Kitchen(Chef)
+        😋😋😋😋😋Waiting Time😋😋😋😋😋
+        Waiter Will collect the Food from Kitchen
+        Waiter Will Come to the Table and Server the Food
+        Enjoy our Meal 💛🧡💛💙💜🖤
+
+        Client                 API                       Server
+        (Req)               ------------>               (Response) 
+                            <------------
+                                String
+            <------------
+            JSON.parse(Response)                   
+    Client
+    (Object)

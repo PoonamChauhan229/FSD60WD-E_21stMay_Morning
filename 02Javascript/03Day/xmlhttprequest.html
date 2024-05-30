@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // Traditional method of making an API call
+    // server >> API 
+    
+    // XHR OBJECT
+    // new keyword
+    var req=new XMLHttpRequest();
+
+    //Openning an Connection
+    // XMLHttpRequest.open(method: string, url: string | URL)
+    req.open('GET','https://restcountries.com/v3.1/all')
+
+    //Sending an Connection || initiating a connect
+    req.send()
+
+    console.log(req.response)
+    // Event > onload > Window 
+    //annoymous function
+    req.onload=function(){
+        // console.log(req.response)
+        var data=JSON.parse(req.response)
+        console.log(data)
+
+        // for loop
+        for(var i=0;i<data.length;i++){
+            //console.log("The area of "+ data[i].name.common+" Country is "+data[i].area)
+        }
+
+        // for of loop
+        for(var element of data){
+            console.log("The area of "+ element.name.common+" Country is "+element.area)   
+        }
+    }
+
+
+    // function functioname(){
+
+    // }
+</script>
+</body>
+</html>

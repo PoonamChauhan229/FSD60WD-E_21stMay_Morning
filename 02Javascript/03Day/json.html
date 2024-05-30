@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var stuObj={
+            name:"Aakash",
+            rolId:25,
+            course:"FSD",
+            learning:"Javacript",
+            place:["Mumbai","Chennai","Banglore"]
+        }
+        console.log(stuObj)
+
+        // JSON
+        // Javascript Object Notation
+
+        var stuJson={
+            "name":"Aakash",
+            "rolId":25,
+            "course":"FSD",
+            "learning":"Javacript",
+            "place":["Mumbai","Chennai","Banglore"]
+        }
+        console.log(stuJson)
+
+        // Server + Client
+        // Server >>> String Langauge
+        // Server ==> String language
+        // Server <=== String language
+
+        // 2 JSON Methods
+        // JSON.stringify  ==obj into string
+        // JSON.parse      ==string to object
+
+        // console.log(JSON.stringify(stuJson))
+        let abc=JSON.stringify(stuJson)
+        console.log(abc)
+
+        let xyz=JSON.parse(abc)
+        console.log(xyz)
+
+        1//*****
+        2//*****
+        3//*****
+        4//*****
+
+        // rows and cols  rows(i) > 4 cols 4
+
+        let str=""
+        for(var i=1;i<=4;i++){            
+            for(var j=1;j<=4;j++){
+                // console.log("*",j)
+                str=str+"*"
+            }
+            str=str+"\n"
+        }
+        console.log(str)
+
+        1// *
+        2// **
+        3// ***
+        4// ****
+        5// *****
+            // rows> 5(i) cols (j) 
+
+        let str1=""
+        for(var i=1;i<=5;i++){            
+            for(var j=1;j<=i;j++){
+                // console.log("*",j)
+                str1=str1+"*"
+            }
+            str1=str1+"\n"
+        }
+        console.log(str1)
+
+
+        // Objects 
+        // for in
+        // for(var key in obj){
+
+        // }
+        for(var key in stuObj){
+            // console.log(key)
+            console.log(stuObj[key])
+        }
+        var arr=[1,56,89]
+        // for of > arrays
+        for(var element of arr){
+            console.log(element)
+        }
+
+       [
+        {},{},{},{}
+       ]
+
+    </script>
+</body>
+</html>
