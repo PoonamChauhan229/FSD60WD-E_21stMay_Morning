@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // IIFE Function
+        (function(){
+            console.log("IIFE FUNCTION.....")
+        })();
+
+        
+        //parameter +args
+        (function(name){
+            console.log(name);
+        })("Poonam");
+
+
+        // return keyword
+        var test=(function(n1){
+            return n1;
+        })(42);
+        console.log(test)
+    </script>
+</body>
+</html>

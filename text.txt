@@ -1,0 +1,70 @@
+Function:
+Function are set of statement/block of code which is responsible doing certain tasks/computation
+and at the end it returns result to the user.
+
+Write a reusable function .
+
+Syntax: 
+function keyword
+functioname > userdefinedFunctionName
+function functioname(){
+//set of statement/block of code
+}
+
+//invoke/call the function
+functioname()
+
+  // Function with parameters
+
+function functioname(param1,param2,param3...n){
+//set of statement/block of code
+}
+functioname(args1,args2,arg3....n)//value 
+
+// function with return keyword
+
+function functioname(param1,param2,param3...n){
+//set of statement/block of code
+//all the executions
+return ....
+}
+functioname()
+
+//Annoymous function
+// function doesnt have a name.
+
+var variableName=function(){
+
+}
+// invoke ?
+variableName()
+//window events  > onload events
+
+
+//IIFE Function
+// Immediately invoked function 
+()();
+()=> Grouping operator > execute our code/write function
+()=> Invokation
+
+(function(){
+  //Your code here...
+})();
+
+//Arrow Functions
+//ES6
+=>
+let variableName=()=>{
+  //block of code
+}
+variableName()
+
+//function keyword
+//=>
+
+any function => 1 line
+var variableName=()=>console.log(2+2)
+variableName()
+
+var variableName=()=>2
+variableName()

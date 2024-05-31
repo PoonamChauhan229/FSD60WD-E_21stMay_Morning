@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Functions with return keyword
+        function test(){
+            var a=2+2//4
+            return a;
+        }
+        console.log(test())
+
+        var x=test()
+        console.log(x)
+
+        function display(n){
+            console.log(n)//4
+        }
+        display(x)
+
+        function test2(){
+            console.log(2)
+            console.log(32)
+            return {"name":"guvi"};
+            console.log(32)
+        
+        }
+        console.log(test2())
+
+        // function with parameters with return keywords
+        // Eng || Math || Sci >>
+        // Out of marks > 100
+        // Eng  > 89
+        // Math > 90
+        // Sci  >80
+
+        // function 1 > Cal sum of scored marks
+        // function 2 > Cal the percentage ---function 1
+
+        function totalScore(eng,math,sci){
+            return eng+math+sci
+        }
+        var sum=totalScore(89,90,80)
+        // console.log(sum)
+        
+        function calPercentage(score){
+               console.log("Total Scored Marks :",score) 
+               var per=(score/300 *100).toFixed(2);
+               console.log("Percentage Scored :",per,"%")
+
+        }
+        calPercentage(sum)
+
+    </script>
+</body>
+</html>
