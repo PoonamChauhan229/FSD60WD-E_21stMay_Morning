@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // spread || opertors ...
+        let number=[1,2,3]
+        console.log(number)
+        console.log(...number)// 1 2 3
+        console.log(Math.max(...number))
+        console.log(Math.min(...number))
+
+        let a=90;
+        let b=89;
+        let c=100;
+        console.log(Math.max(a,b,c))
+
+        let newarr=[a,b,c]
+        
+        console.log(Math.max(...newarr))
+        console.log(Math.min(...newarr))
+
+
+        function add(x,y,z){            
+            console.log(x+" + "+y+" + "+z+" =",x+y+z)
+            console.log(`${x} + ${y} + ${z} =`,x+y+z)
+        }
+        add(100,200,300)
+        add(...number)
+        add(...newarr)
+
+
+        var str="guvi"
+        console.log(...str)
+        console.log([...str])//spreading
+
+        let arr56=[...number,...newarr]
+        console.log(arr56)//concat
+
+        let arr67=[...number]
+        console.log(arr67)// copy of the number
+
+
+    </script>
+</body>
+</html>

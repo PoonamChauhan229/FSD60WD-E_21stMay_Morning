@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // scope >{ // scope}
+        //if //for //functions {}
+
+        var a;
+        a=90;
+        console.log(a)
+
+        let b;
+        b=80;
+        console.log(b)
+
+        const c=78;
+        console.log(c)
+        // global scope
+
+        {
+            console.log(a,b,c)
+        }
+
+
+
+        // var  > doesnt have any scope concerns
+        // has functional scope 
+        {
+            var x=10;
+            console.log(x)
+        }
+        console.log(x)
+
+        function test(){
+            console.log(x,a)
+            var t=190;
+            console.log(t)
+            const j=90;
+            let g=76
+            console.log(j,g)
+        }
+        test()
+        //console.log(t)// t is not defined
+        //console.log(j,g)// not defined
+
+        // let 
+        
+        {
+            console.log(b)
+            let y=89;
+            console.log(y)
+        }
+        // console.log(y)// y is not defined
+
+        // const
+        {
+            console.log(c)
+            let u=76;
+            console.log(u)
+        }
+        // console.log(u)// not defined
+
+        // let const scope
+        // var functional scope
+
+
+        // question
+
+        {
+            let w=90;
+            const h=9;
+            var d=78;
+            {
+                let r=900;
+                let f=890;
+                console.log(w)
+                console.log(h)
+                console.log(d)                
+                console.log(r)
+                console.log(f)
+                {
+                    let v=190;
+                    let q=189;
+                    console.log(w)
+                    console.log(h)
+                    console.log(d)
+                    console.log(r)
+                    console.log(f)
+                }
+
+                    console.log(v)
+                    console.log(q)
+            }
+                    console.log(v)
+                    console.log(q)
+    }
+        
+        console.log(w)//78
+        console.log(h)
+        console.log(d)
+        console.log(r)
+        console.log(f)
+        console.log(v)
+        console.log(q)
+    </script>
+</body>
+</html>

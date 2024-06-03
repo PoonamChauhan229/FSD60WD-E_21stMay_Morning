@@ -1,0 +1,4 @@
+var let const
+
+Only var declare the varibles
+let const 

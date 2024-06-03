@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    //destructuring > unpack
+
+    <script>
+        //array destructure
+        let arr=[100,200,300,400]
+
+        console.log(arr[1])
+        console.log(arr[2])
+
+        let [n1,n2,n3,n4]=arr
+        console.log(n1,n2,n3,n4)
+
+        //object destructing
+        var obj={
+            name:"Preeti",
+            roll:21,
+            lanuages:"Javascript",
+            place:"Chennai"
+        }
+       console.log(obj.lanuages,obj.place,obj.name,obj.roll)
+
+        let {name,roll,lanuages,place}=obj
+        
+        console.log(lanuages,place,name,roll)
+    </script>
+</body>
+</html>
