@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- arr.map()
+> function as a parameter
+arr.map(()=>{})
+        >(element,index)
+
+let res=arr.map((element,index)=>{
+    //block of code
+})
+
+Work on each and every element
+res > new array >> returns a new array with transformed values
+Orginal array remains unchanged
+
+-->
+
+    <script> 
+       let arr=[11,21,33,44,53,78,56,45,34,90,67,45]
+    //    [110,210,330,440,530]
+    arr.map((element,index)=>{
+        console.log(`This ELement ${element} lies at index ${index}`)
+    })
+
+    let res=arr.map((element,index)=>{
+        return (`This ELement ${element} lies at index ${index}`)
+    })
+    console.log(res)
+
+   let res1= arr.map((element,index)=>(element*10))
+   console.log(res1)
+
+    </script>
+</body>
+</html>

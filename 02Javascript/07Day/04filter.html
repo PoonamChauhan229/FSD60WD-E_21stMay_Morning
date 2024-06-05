@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student=[
+            {
+                name:"Preethi",
+                score:70
+            },
+            {
+                name:"Pradeep",
+                score:30 
+            },
+            {
+                name:"Shivang",
+                score:60
+            },
+            {
+                name:"Chandan",
+                score:40 
+            },
+        ]
+
+        //  >40
+        let res=student.filter((element)=>element.score>40)
+        console.log(res)
+
+        let res1=res.map(element=> `${element.name} - ${element.score}`)
+        console.log(res1)
+
+        let result=student.filter((element)=>element.score>40).map(element=> `${element.name} - ${element.score}`)
+
+        console.log(result)
+    </script>
+</body>
+</html>

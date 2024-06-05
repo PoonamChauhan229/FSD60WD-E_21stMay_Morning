@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a Person Class which holds all the details -->
+    <!-- using template literals+ object destructing  -->
+    <!-- 15 min -->
+
+    <script>
+        class Person{
+            constructor(name,age){
+                this.name=name,
+                this.age=age
+            }
+            //
+            getDetails(){
+                console.log(name,this.name)
+                console.log(`My name is ${this.name} and age is ${this.age}`)
+            }
+        }
+
+        let p1=new Person("Guvi","50")
+        let {name,age}=p1
+        // console.log(`My name is ${name} and age is ${age}`)
+        p1.getDetails()
+    </script>
+</body>
+</html>

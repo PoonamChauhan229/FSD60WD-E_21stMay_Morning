@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student=[
+            {
+                name:"Preethi",
+                score:70 //80
+            },
+            {
+                name:"Pradeep",
+                score:50 //60
+            },
+            {
+                name:"Shivang",
+                score:60  //70
+            },
+            {
+                name:"Chandan",
+                score:40  //50
+            },
+        ]
+
+        // score by +10
+        student.map((element)=>console.log(element.score+10))
+        let res=student.map((element)=>element.score+10)
+        console.log(res)
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+Array Methods > Arrays
+()
+MRF
+let arr=[1,20,30,40,50,60,80.....n]  >>> [10,200,300,400,500,600,800......n]
+
+1  20  30 > elements
+0  1   2
+
+for(let i=0;i<n.length;i++){
+    console.log(arr[i]*10)
+}
+start point
+end point
+condition satsification
+what it should print
+where the loop is terminating
+
+
+MAP
+
+arr.map()
+> function as a parameter
+arr.map(()=>{})
+        >(element,index)
+
+let res=arr.map((element,index)=>{
+    //block of code
+})
+
+Work on each and every element
+res > new array >> returns a new array
+Orginal array remains unchanged
+
+
+REDUCE
+
+
+FILTER
+>function as a parameter
+arr.filter((element,index)=>{})
+condition >>> true (O/P) false (ignored)
+true > shown as o/p  
+false > will be ignored

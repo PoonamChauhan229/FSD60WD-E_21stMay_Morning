@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[11,21,33,44,53,78,56,45,34,90,67,45]
+        // sum=0
+        // for(){
+        //     sum+=arr[i]
+            // sum=sum+arr[i]
+        // }
+
+        // slightly different
+          //acc >> accumulator >>
+        // arr.reduce((acc,element)=>console.log(acc ,element))
+        
+         // without acc value
+        // acc > first element 11
+        // elemnt> 2nd element .......
+        let res=arr.reduce((acc,element)=> acc +element)
+        console.log(res)
+         //    11 21 
+
+        //with acc value
+        // acc > acc value 10
+        //element > 1st element 11,12,
+        console.log("with acc value")
+        let result=arr.reduce((acc,element)=>acc+element,10)
+        console.log(result)
+
+        // 10 11
+        // 21 21
+        // 42 33
+        // 587
+
+
+
+
+      
+        // reduce to a single value
+        // arr.reduce(()=>console.log())
+    </script>
+</body>
+</html>

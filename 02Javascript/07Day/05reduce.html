@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let student=[
+            {
+                name:"Preethi",
+                score:70
+            },
+            {
+                name:"Pradeep",
+                score:30 
+            },
+            {
+                name:"Shivang",
+                score:60
+            },
+            {
+                name:"Chandan",
+                score:40 
+            },
+        ]
+
+        let res=student.reduce((acc,element)=>acc+element.score,0)
+        console.log(res)
+    </script>
+</body>
+</html>
