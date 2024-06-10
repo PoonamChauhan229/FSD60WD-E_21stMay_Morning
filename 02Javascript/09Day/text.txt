@@ -1,0 +1,29 @@
+CSS:
+
+STYLING 
+
+Selectors
+id        id="idname"  attribute inside the tag    value > userdefined name  >> unique > 1 place >>#idname{...}
+class     class="classname"  attribute inside the tag  value > userdefined name >> notunquie >> multiple place >> classname >>.classname
+tag       <p></p>
+
+Syntax
+
+Selectors{
+    property1:value1,
+    property2:value2,
+    property3:value3,
+    property4:value4,
+    ...
+    ...
+    ...
+    ...
+    propertyn:valueN,
+
+}
+
+
+3 Places  > Tag Selectors
+>inline     >>> <p ........>text</p>  >>> applicable >>> element
+>internal   >>><html></html>          >>> applicable >>> entire page    >>> <style></style>
+>external   >>>link                   >>> applicable >>> applicable everywhere/page     >>>.css

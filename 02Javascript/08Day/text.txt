@@ -1,0 +1,33 @@
+HTML >HYPER TEXT MARK UP LANGUAGE
+     > CREATES A SKELETON
+     >.html
+     >Satstic web pages
+
+
+EXTENSIONS/Market Place:
+1-HTML CSS Support    -ecmel
+2-Live Server         -Ritwick Dey
+3-vscode-icons        -VSCode Icons Team
+4-HTML Boilerplate    -sidthesloth
+5-Material Icon Theme -Philipp Kief
+6-Prettier - Code formatter-Prettier
+
+10 min -- Pls Install 
+
+  <!--
+        Tags
+        Attribute
+
+        Tags>
+            Opening Closing
+            
+            <head></head>
+            <title></title>
+            <html></html>
+            <body></body>
+
+            Self Closing
+            <meta>
+            <meta/>
+
+    -->
