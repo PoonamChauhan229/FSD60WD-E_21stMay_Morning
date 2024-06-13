@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Responsiveness
+            > Bootstrap > Framework 
+    
+ Media Queries : 
+    
+-->
+ <style>
+    div{
+        background-color: green;
+        font-size: 20px;
+        color:white;
+        padding:20px;
+    }
+
+    /* within width 400px   navy bg color-white  padding-15px
+    max width-400px
+    */
+    @media screen and (max-width:400px) {
+        div{
+        background-color: navy;
+        padding:15px;
+    }
+    }
+
+    /* min 500px bg color orange paading 40px */
+    @media screen and (min-width:500px) {
+        div{
+        background-color: orange;
+        padding:40px;
+    }     
+    }
+
+    /* 600 to 768
+    min 600 max 768
+    */
+    @media (min-width:600px) and (max-width:768px){
+        div{
+        background-color: darkmagenta;
+        font-size: 32px;
+    }
+    }
+    @media (min-width:800px) and (max-width:900px) {
+        div{
+            background-color: mediumvioletred;
+            font-size: 17px;
+            color: greenyellow;
+            padding: 27px;
+            }    
+    }
+    @media (min-width:950px) and (max-width:1100px) {
+        div{
+            background-color: rgb(46, 220, 142);
+            font-size: 45px;
+            padding: 55px;
+            color: black;
+            }    
+    }    
+ </style>
+
+<div>Hi Everyone</div>
+</body>
+</html>
