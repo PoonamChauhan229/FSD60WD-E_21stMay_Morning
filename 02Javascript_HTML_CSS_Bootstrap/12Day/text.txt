@@ -1,0 +1,28 @@
+Breakpoint      	Class infix	Dimensions
+X-Small	            None	<576px   0     <576  col-n
+Small	            sm	    ≥576px   576   <768  col-sm-n
+Medium	            md	    ≥768px   768   <992  col-md-n
+Large	            lg	    ≥992px   992   <1200 col-lg-n
+Extra large	        xl	    ≥1200px  1200  <1400 col-xl-n
+Extra extra large	xxl	    ≥1400px  1400...     col-xxl-n
+
+
+Grid System
+<Container>
+<Row>
+<Col></Col>===12 cols
+</Row>
+</Container>
+
+Row >
+
+12 
+4+4+4
+3+3+3+3
+6+6
+10+2
+11+1
+2+5+3+2
+5+5+2
+7+5
+3+5+3
