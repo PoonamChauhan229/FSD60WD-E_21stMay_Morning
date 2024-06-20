@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        height: 100px;
+        width: 105px;
+        margin-bottom: 4px;
+        background-color: rebeccapurple;
+    }
+</style>
+
+<body>
+    <div id="test"></div>
+    <!-- <button onclick="add(event)">Stop Animation</button> -->
+    <button id="btn" onclick="stopAnim()">Stop Animation</button>     
+    <script>
+        function add(event){
+            console.log(2+3)
+            console.log(event)
+        }
+        // add()
+
+        let testDiv=document.getElementById('test')
+        let btnAnim=document.getElementById('btn')
+        
+        let id=setTimeout(anim,3000)
+
+        function anim(){
+            console.log("Animation Function Called")
+            testDiv.style.backgroundColor="green";
+            testDiv.style.width="200px"
+            testDiv.style.marginLeft="30px"
+
+            let pTag=document.createElement('p');
+            pTag.innerHTML="<h4>Animation Performed Successfully !!!</h4>";
+            pTag.style.color="green";
+            pTag.style.marginLeft="30px"
+            document.body.append(pTag)          
+
+            btnAnim.style.display="none";
+        }
+        function stopAnim(){
+            console.log("Animation Stopped")
+            // We have stop before 3 sec
+            // Timer has to be cleared
+            // clearTimeout() > Clear Timer 
+            clearTimeout(id)
+            let pTag=document.createElement('p');
+            pTag.innerHTML="<h4>Animation Stopped Successfully !!!</h4>";
+            pTag.style.color="rebeccapurple";
+            document.body.append(pTag)
+        }
+        // Events are nothing
+        // Perform an action
+        // Events are triggered
+
+        // Events > Objects
+
+        //Events > onclick=""
+        //setTimeOut()
+        //clearTimeOut()
+        //DOM
+        //CSS
+        //HTML
+    </script>
+    
+</body>
+</html>

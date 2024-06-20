@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout()
+        // Timer 
+        // When you want something to be executes only once after certain interval of time
+        // setTimeout(()=>{},delay-timer-ms)
+            setTimeout(()=>{
+                console.log("Hi")
+            },4000)
+            //1000 ms > 1 sec
+
+            setTimeout(timer,2000)
+            function timer(){
+                console.log("Timer Called")
+            }
+
+            // add 2 num
+            setTimeout(add,2000,3,5)
+            function add(a,b){
+                console.log("AdditionTimer Called",a+b)
+            }
+
+    </script>
+</body>
+</html>

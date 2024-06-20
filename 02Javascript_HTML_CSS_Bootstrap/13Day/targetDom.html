@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="testid01">ID_DIV</div>
+    <p id="testid02">ID_PARA</p>
+
+    <div class="testclass01">CLASS</div>
+    <p class="testclass01">CLASS</p>
+    <h1 class="testclass01">CLASS</h1>
+    <h2 class="testclass01">CLASS</h2>
+    <div class="testclass01">CLASS</div>
+    <p class="testclass01">CLASS</p>
+    <h1 class="testclass01">CLASS</h1>
+    <h2 class="testclass01">CLASS</h2>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p class="testclass02">CLASS_PARA</p>
+
+    <script>
+       let test01= document.getElementById('testid01')
+       test01.style.backgroundColor="red",
+       test01.style.fontSize="35px"
+       console.log(test01)
+
+       let test02=document.getElementsByClassName('testclass01')
+       console.log(test02)
+
+       for(let i=0;i<test02.length;i++){
+            // console.log(test02[i])
+            test02[i].innerHTML="<h5>getElementsByClassName()</h5>"
+            test02[i].style.backgroundColor="orange",
+            test02[i].style.width="400px"
+        } 
+
+
+       let test03=document.getElementsByTagName('div')
+       console.log(test03)
+        // collection > Array
+        for(let i=0;i<test03.length;i++){
+            // console.log(test03[i])
+            test03[i].innerHTML="<h5>getElementsByTagName()</h5>"
+            test03[i].style.backgroundColor="yellow",
+            test03[i].style.width="500px"
+        }    
+
+        // querySelector()
+        // querySelectorAll()
+        // CSS
+        let test04=document.querySelector('.testclass01')
+        console.log(test04)
+
+        let test05=document.querySelectorAll('.testclass01')
+        console.log(test05)
+
+        let test06=document.querySelector('#testid01')
+        console.log(test06)
+
+        let test07=document.querySelectorAll('div')
+        console.log(test07)
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //exceute again and again after the certain interval
+       // setInterval(IntervalHandler,1000)
+        function IntervalHandler(){
+            console.log("Hi")
+        }
+
+        let count=0;
+       // setInterval(increment,2000)
+        function increment(){
+            count++;
+            console.log(count)
+        }
+
+        setInterval(add,3000,3,4)
+        function add(a,b){
+            console.log(a+b)
+        }
+    </script>
+</body>
+</html>
