@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+<body>
+    <button id="btn01" onclick="clickMe(event)">Click Mouse Event</button>
+    <button id="btn02" ondblclick="dblClickMe(event)">Double Click Mouse Event</button>
+    <button id="btn03" onmousedown="dblClickMe(event)">Mouse Down Event</button>
+    <button id="btn04" onmouseup="dblClickMe(event)">Mouse Up Event</button>
+    
+    <button id="btn05">Click Event Triggered-01</button>
+    <button id="btn06">Click Event Triggered-02</button>
+
+
+    <script>
+    function clickMe(event){
+        console.log(event)
+        let pTag=document.createElement('p');
+        pTag.innerHTML="<h4>Single Click Pointer Event !!!</h4>";
+        pTag.style.color="green";
+        document.body.append(pTag) 
+    }
+
+    function dblClickMe(event){
+        console.log(event)
+        let pTag=document.createElement('p');
+        pTag.innerHTML="<h4>Double Click Mouse Event !!!</h4>";
+        pTag.style.color="purple";
+        document.body.append(pTag) 
+    }
+
+    // javascript
+    let btn05Button=document.getElementById('btn05')
+    console.log(btn05Button)
+    btn05Button.addEventListener('click',(event)=>{
+        console.log(event)
+        console.log("Hello World")
+    })
+
+    let btn06=document.getElementById('btn06')
+    btn06.addEventListener('click',test)
+
+    function test(){
+        console.log("New Function Called")
+    }
+    // test()
+
+    let btn07=document.createElement('button')
+    btn07.setAttribute('id','btn07Button')
+    btn07.innerText="New button"
+    document.body.append(btn07)
+    console.log(btn07)
+    btn07.addEventListener('click',()=>{
+        console.log("Brand New Button Created")
+    })
+    </script>
+</body>
+</html>
+
+//    Events 
+
+// Mouse Event  >onclick, ondblclick, onmouseup, onmousedown. >> PointerEvent ||MouseEvent 
+// Keyboard Events
+// Input Events

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="ques01" style="font-size: 25px;">Color a span/div element content when a user moves the mouse over the element</div>
+
+    <h1 id="ques03">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium dolore iusto expedita, quasi nemo pariatur.</h1>
+
+    <input type="text" name="" id="ques04"><hr/>
+    <span id="span01"></span><hr/>
+    <span id="span02"></span><hr/>
+
+    <div id="ques09" contenteditable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt laboriosam qui placeat! Nostrum, repellat facere!</div>
+    <script>
+        //Q1: Color a span/div element content when a user moves the mouse over the element.
+        // onmouseover()
+        let ques01=document.getElementById('ques01')
+        ques01.addEventListener('mouseover',()=>{
+            ques01.style.color="purple";
+           setTimeout(()=>{
+            ques01.style.color="";
+           },1000)
+        })
+
+        //Q2:Use prompt to read a value from user and display it in the span element.
+        // let ques02=prompt("Enter the Value")
+        // console.log(ques02)
+        // document.body.append(document.createElement('span').innerText=ques02);
+
+        //Q3:Display the mouse X and Y coordinates in a <span> tag when you click on a <h1> tag which contains a paragraph.
+            // clientX
+            // clientY
+
+            let ques03=document.getElementById('ques03')
+            ques03.addEventListener('click',(event)=>{
+                console.log(event)
+                console.log(event.clientX,event.clientY)
+                document.body.append(document.createElement('span').innerHTML=`The mouse X and Y coordinates are ${event.clientX} and ${event.clientY} respectively.`);
+            })
+
+            //Q4:Write a Javascript code for character counts in the textarea.
+            // let span01=document.createElement('span')
+            let span01=document.getElementById('span01')
+            let span02=document.getElementById('span02')
+            let ques04=document.getElementById('ques04')//input
+            ques04.addEventListener('input',(event)=>{
+                // console.log(ques04.value)
+                 let str=ques04.value;
+                //let str=event.target.value
+                let wordCount01=str.length
+                span01.innerHTML=wordCount01
+                //replace
+                let wordCount02=str.replace(/ /g,"").length
+                console.log(wordCount02)
+                span02.innerHTML=wordCount02
+            })
+
+            //Q9:When a cursor is moved over an content, allow the user to edit the content in HTML page.NOTE: Input element should not be used.
+
+            //Q8:When user press any key in your html page show a alert that Invalid Key Pressed, but when user press spacebar show an alert Thank You..!! and close the current window.>> Keyboard Event >>onkeypress() >> document
+            // charCode:117 //code:"KeyU"// key:"u"// keyCode:117
+            // charCode:13 //code:"Enter"// key:"Enter"// keyCode:13
+            // charCode:32 //code:"Space"// key:" "// keyCode:32
+            // onkeydown
+            // onkeyup
+            // onkeypress
+
+            document.addEventListener('keypress',(event)=>{
+                if(event.code=="Space"){
+                    alert("Thank You..!! ")
+                    window.close()
+                }else{
+                    alert("Invalid Key Pressed!!!")
+                    window.open()
+                }
+            })
+
+
+
+
+    </script>
+</body>
+</html>

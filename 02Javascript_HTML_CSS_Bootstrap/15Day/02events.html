@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- oninput
+    onblur
+    onfocus   -->
+    <div style="width: 30%;margin: auto;">
+    <input type="text" name="" id="" placeholder="Enter the FirstName" oninput="test01(event)"><br>  <hr>  
+    <input type="text" name="" id="" onblur="test02(event)" placeholder="Enter the MiddleName"><br> <hr>
+    <input type="text" name="" id="" onfocus="test03(event)" placeholder="Enter the LastName" value="abc"><br> <hr>
+    <input type="text" name="" id="inputBox04" placeholder="Enter the FullName"><br> <hr>
+</div>
+    <script>
+        function test01(event){
+            // console.log("Oninput Triggered")// serach functionality
+            // console.log(event)
+            console.log(event.target.value)
+            let pTag=document.createElement('p');
+            pTag.innerHTML=event.target.value
+            pTag.style.color="green";
+            document.body.append(pTag) 
+        }
+        function test02(event){
+            console.log(event.target.value)
+            let pTag=document.createElement('p');
+            pTag.innerHTML=event.target.value
+            pTag.style.color="purple";
+            document.body.append(pTag)
+        }
+
+        function test03(event){
+            console.log(event.target.value)
+            let pTag=document.createElement('p');
+            pTag.innerHTML=event.target.value
+            pTag.style.color="orangered";
+            document.body.append(pTag)
+        }
+
+        let inputBox04=document.getElementById('inputBox04')
+        inputBox04.addEventListener('input',(event)=>{
+            console.log(event.target.value)
+            let pTag=document.createElement('p');
+            pTag.innerHTML=event.target.value
+            pTag.style.color="indigo";
+            document.body.append(pTag)
+        })
+    </script>
+</body>
+</html>
