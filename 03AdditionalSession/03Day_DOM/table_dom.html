@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>TABLE_DOM</title>
+</head>
+<body>
+
+    <script>
+       
+        let table=createNewElement("table","","class","table")
+
+        let thead=createNewElement('thead')
+
+        let tr1=createNewElement('tr')
+        let th1=createNewElement("th","#","scope","col")
+        let th2=createNewElement("th","First","scope","col")
+        let th3=createNewElement("th","Last","scope","col")
+        let th4=createNewElement("th","Handle","scope","col")
+        tr1.append(th1,th2,th3,th4)
+        // tr1.appendChild(th1,th2,th3,th4)
+        thead.append(tr1)
+
+
+        // second part
+        let tbody=createNewElement("tbody")
+        let tr2=createNewElement('tr')
+      
+        let th5=createNewElement('th','1','scope',"row")
+        let td1=createNewElement('td','Jacob')
+        let td2=createNewElement('td','Thornton')
+        let td3=createNewElement('td','@fat')
+
+        let tr3=createNewElement('tr')
+        let th6=createNewElement('th','2','scope',"row")
+        let td4=createNewElement('td','Mark')
+        let td5=createNewElement('td','Otto')
+        let td6=createNewElement('td','@ndo')
+
+        let tr4=createNewElement('tr')
+        let th7=createNewElement('th','3','scope',"row")
+        let td8=createNewElement('td','Larry the Bird')
+        let td9=createNewElement('td','Tooo')
+        let td10=createNewElement('td','@tyu')
+
+        tr2.append(th5,td1,td2,td3)
+        tr3.append(th6,td4,td5,td6)
+        tr4.append(th7,td8,td9,td10)
+
+        tbody.append(tr2,tr3,tr4)
+        table.append(thead,tbody)
+        document.body.append(table)
+
+        function createNewElement(element,value="",atbt,atbtVal){
+            let newElement=document.createElement(element);
+            newElement.setAttribute(atbt,atbtVal)
+            newElement.innerHTML=value
+            return newElement
+        }
+
+
+
+    </script>
+</body>
+</html>

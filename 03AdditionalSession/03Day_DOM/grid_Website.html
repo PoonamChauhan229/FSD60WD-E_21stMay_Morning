@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   
+    <title>Document</title>
+
+</head>
+<style>
+    .wrapper{
+        display: grid;
+        grid-template-columns: 279px 200px 200px 200px 200px 200px;
+        grid-template-rows: 40px 321px 200px 30px ;
+    }
+    .header{
+        justify-content: end;
+        grid-column:1/7 ;
+        grid-row: 1/2;
+        padding: 5px;
+    }
+    .aboutSection{
+        grid-column:1/5 ;
+        grid-row: 2/3;
+    }
+    .notificationSection{
+        grid-column:5/7 ;
+        grid-row: 2/4;
+    }
+    .productSection{
+        grid-column:1/3 ;
+        grid-row: 3/4;   
+    }
+    .serviceSection{
+        grid-column:3/5 ;
+        grid-row: 3/4;   
+    }
+    .footerSection{
+        grid-column:1/7 ;
+        grid-row: 4/5;  
+    }
+    
+</style>
+<body>
+    <div class="border border-1 border-primary wrapper">
+        <div class="header d-flex border border-1 border-primary">
+            <div class="p-1">Home</div>
+            <div class="p-1">About</div>
+            <div class="p-1">Contact us</div>
+            <div class="p-1">Services</div>
+        </div>
+      
+        <div class="border border-1 border-primary aboutSection">About Us Section</div>
+        <div class="border border-1 border-primary notificationSection">Notification
+            <div class="card">
+                <div class="card-header m-2">
+                  Featured.........
+                  <span class="badge bg-warning">New</span>
+                </div>
+                <div class="card-header m-2">
+                    Featured
+                  </div>
+                  <div class="card-header m-2">
+                    Featured
+                  </div>
+                  <div class="card-header m-2">
+                    Featured
+                  </div>
+                  <div class="card-header m-2">
+                    Featured
+                  </div>
+              </div>
+        </div>
+        <div class="border border-1 border-primary productSection">Products</div>
+        <div class="border border-1 border-primary serviceSection">Services</div>
+        
+        <div class="border border-1 border-primary footerSection">Footer</div>
+    </div>
+</body>
+</html>
