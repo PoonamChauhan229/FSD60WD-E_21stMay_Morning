@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function callMeBack(s){
+            console.log("I am CallBack Function",s)
+        }
+
+
+        function greet(x,callback,a){
+            console.log("This is function:",a)
+            callback(x)
+        }
+
+        greet(2,callMeBack,"normal")//args
+
+
+        // 1 function > display the sum  > callback
+        // 2 function > write for adding 2 nos
+
+        function displaySum(res){//cbk 
+            console.log("Total is:",res)
+
+        }
+
+        function calSum(a,b,callback){// operations
+            // console.log(a+b)
+            let z=a+b;
+            callback(z)
+
+        }
+        calSum(4,5,displaySum)
+        calSum(9,15,displaySum)
+
+        // 1 function > display ur name with Greetings!!! > callback
+        // 2 function > Mention ur name > call this()
+
+        function displayGreetings(res){
+            console.log("Greetings From "+ res+" !!!!")
+            console.log(`Greetings From ${res} !!!!`)
+            
+        }
+       
+         function checkName(callback,name){
+            callback(name)
+         }
+         checkName(displayGreetings,"Guvi")
+
+        //  >> 
+
+        // callbackhell
+
+        // function f1(name){
+        //     function f2(email){
+        //         function f3(){
+        //             function f4(){
+        //                 function f5(){
+
+        //                 }
+        //             }
+        //             f1()
+        //         }
+        //         f4()
+        //     }
+        // }
+
+
+
+function displayData(res,abc){
+    // console.log(res)
+    for(var element of res){
+            console.log("The area of "+ element.name.common+" Country is "+element.area)   
+        }
+        console.log(abc)
+
+}
+function xmlReq(callback){
+    var req=new XMLHttpRequest();
+req.open('GET','https://restcountries.com/v3.1/al')
+req.send()
+
+// console.log(req.response)
+req.onload=function(){    
+    if(req.status==200){//true val
+        var data=JSON.parse(req.response)
+        callback(data,"Data Fetched Succesfully")
+    }else{//false val
+        callback("","Some Error Occured")
+    }
+    
+
+    
+}
+}
+xmlReq(displayData)
+
+
+
+
+
+
+
+
+
+        function hello(){
+            console.log("hello >callback")
+        }
+
+        // function setTimeout(callback,delay){
+        //     callback()
+        // }
+
+        setTimeout(hello,1000)
+
+
+    </script>
+</body>
+</html>
