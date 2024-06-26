@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let xmlPromise=new Promise((resolve,reject)=>{
+                var req=new XMLHttpRequest();
+                    req.open('GET','https://restcountries.com/v3.1/all')
+                    req.send()
+
+                    // console.log(req.response)
+                    req.onload=function(){    
+                        if(req.status==200){//true val
+                            var data=JSON.parse(req.response)
+                            resolve(data)                            
+                        }else{//false val
+                            reject("Some Error Occured")
+                        }  
+                   }
+
+            })
+            xmlPromise.then((data)=>console.log(data)).catch((err)=>console.log(err))
+                
+            //Write Inside the Function
+
+            function xmlPromiseFunction(){
+               return  new Promise((resolve,reject)=>{
+                        var req=new XMLHttpRequest();
+                            req.open('GET','https://restcountries.com/v3.1/all')
+                            req.send()
+
+                            // console.log(req.response)
+                            req.onload=function(){    
+                                if(req.status==200){//true val
+                                    var data=JSON.parse(req.response)
+                                    resolve(data)
+                                }else{//false val
+                                    reject("Some Error Occured")
+                                }  
+                        }
+                })
+            }
+            xmlPromiseFunction().then((data)=>console.log(data)).catch((err)=>console.log(err))
+    </script>
+</body>
+</html>

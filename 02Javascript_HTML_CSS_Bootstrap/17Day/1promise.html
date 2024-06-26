@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Promise > object
+        const p=new Promise(()=>{})
+        console.log(p)
+
+        const p1=new Promise((resolve,reject)=>{
+            resolve("Hi, I Met you!!!")
+        })
+        console.log(p1)
+
+        const p2=new Promise((resolve,reject)=>{
+            reject("Sorry, I didnt Turned Up")
+        })
+        console.log(p2)
+
+        const p3=new Promise((resolve,reject)=>{
+            resolve("P3,Hi, I Met you!!!")
+            reject("Sorry P3, I didnt Turned Up")// not execute
+        })
+        console.log(p3)
+
+
+        const p4=new Promise((resolve,reject)=>{            
+            reject("Sorry P4, I didnt Turned Up")
+            resolve("P4,Hi, I Met you!!!")// not execute
+        })
+        console.log(p4)
+
+        const p5=new Promise((resolve,reject)=>{ 
+            if(true){
+                resolve("P5,Hi, I Met you!!!")// not execute
+            }else{
+                reject("Sorry P5, I didnt Turned Up")
+            }        
+           
+            
+        })
+        console.log(p5)
+
+        //take age from the user
+        //eligilble for voting >18
+        //not eligible for voting <18
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //take age from the user
+        //eligilble for voting >18
+        //not eligible for voting <18
+    //   let age=prompt("Enter the age?")
+    let age=55;
+        const p6=new Promise((resolve,reject)=>{ 
+            if(age>18){
+                resolve("Hey P6, You are eligible to Vote")
+            }else{
+                reject("Sorry P6, NOt Eligible to Vote")
+            }        
+           
+            
+        })
+        // console.log(p6)
+        p6.then((data)=>console.log(data)).catch((err)=>console.log(err))
+
+        let accessGiven="yes";
+        // let accessGiven="no"
+        function writePromise(){
+            return new Promise((resolve,reject)=>{ 
+            if(accessGiven=="yes"){
+                setTimeout(()=>{
+                    resolve("Hey Function, Access Granted!!!")
+                },1000)
+            }else{
+                reject("Sorry Function, Access Denied!!!")
+            }                  
+            
+        })        
+
+        }
+        writePromise().then((data)=>console.log(data)).catch((err)=>console.log(err))
+
+
+        
+    </script>
+</body>
+</html>

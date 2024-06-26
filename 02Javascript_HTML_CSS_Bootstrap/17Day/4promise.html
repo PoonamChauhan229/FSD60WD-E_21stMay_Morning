@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const p1=new Promise((resolve,reject)=>{ 
+            if(true){
+            setTimeout(()=>{
+                resolve("Happy Timer1")
+            },1000)
+            }else{
+                reject("Sad Timer1")
+            } 
+        })
+        //p1.then((data)=>console.log(data)).catch((err)=>console.log(err))
+
+
+        const p2=new Promise((resolve,reject)=>{ 
+            if(true){
+            setTimeout(()=>{
+                resolve("Happy Timer2")
+            },2000)
+            }else{
+                reject("Sad Timer2")
+            } 
+        })
+       // p2.then((data)=>console.log(data)).catch((err)=>console.log(err))
+
+
+        const p3=new Promise((resolve,reject)=>{ 
+            if(true){
+            setTimeout(()=>{
+                resolve("Happy Timer3")
+            },3000)
+            }else{
+                reject("Sad Timer3")
+            } 
+        })
+       // p3.then((data)=>console.log(data)).catch((err)=>console.log(err))
+
+        const p4=new Promise((resolve,reject)=>{ 
+            if(true){
+            setTimeout(()=>{
+                resolve("Happy Timer4")
+            },4000)
+            }else{
+                reject("Sad Timer4")
+            } 
+        })
+        //p4.then((data)=>console.log(data)).catch((err)=>console.log(err))
+
+        // Multiple Promises >> handling together
+        // Promise.all([])
+        Promise.all([p1,p2,p3,p4]).then((data)=>console.log(data)).catch((err)=>console.log(err))
+        // fulfiled > All should be fullfilled > return an array of PRomises > Fullfilled value
+
+        // Rejected > Any 1 is rejected rest will not be executed and it willgive  the  rejected value of that promises which was not able to be fulfilled
+
+        // XMLHttpRequest() with promise
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function compute(num){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(num*2)
+                },1000)
+            })
+        }
+        compute(2).then((data1)=>{
+            console.log(data1)
+            return compute(data1)//compute(4)
+        }).then((data2)=>{
+            console.log(data2)
+            return compute(data2)//compute(8)
+        }).then((data3)=>{
+            console.log(data3)
+            return new Promise((resolve,reject)=>{
+                reject("Failed to execute")
+            }).catch((err)=>console.log(err))
+        })
+
+        //async and await
+
+
+        
+    </script>
+</body>
+</html>
