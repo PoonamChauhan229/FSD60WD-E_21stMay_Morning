@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Countries_DATA_ASYNC</title>
+</head>
+<body>
+    <h4 class=" m-auto w-100 text-center mb-2 text-decoration-underline text-warning">REST COUNTRIES DETAILS-ASYNC_AWAIT</h4>
+    <script>
+        // Syntax
+        // async function test(){
+        //     let a=await 20;// 
+        //     //let b=await a.json()
+        
+        //     return a
+        // }
+        // console.log(test())
+
+        async function getCountries(){
+            let data=await fetch('https://restcountries.com/v3.1/all')
+            let res=await data.json()
+            console.log(res)
+            displayCountries(res)
+        }
+       getCountries()
+
+       function displayCountries(countryDetails){
+            document.body.style.backgroundColor="black";
+            console.log(countryDetails)// 250 right
+            // help me diplay the data in browser
+            //mrf > map method
+            let wrapper=document.createElement('div')
+            wrapper.classList.add('d-flex','flex-wrap','gap-2','mx-2','w-100','text-center')
+           
+            countryDetails.map((element,index)=>{              
+                
+                let div=document.createElement('div')
+                // div.innerHTML="Hello world "+(index+1)
+                div.innerHTML=`
+                    <div class="card m-0 p-0" style="width: 15.1rem;height:300px">
+                        <img src=${element.flags.png} class="card-img-top" alt="..." height="140px">
+                        <div class="card-body mb-1 p-0">
+                            <h5 class="card-title text-decoration-underline text-success p-0 m-0">
+                                <small>${index+1}. ${element.name.common}</small></h5>
+
+                            <p class="card-text p-0 mb-1"><small> ${element.name.common} capital is  ${element.capital}. The area is  ${element.area} and population of this country is  ${element.population}.</small></p>
+
+                            <a href=${element.maps.googleMaps} target="_blank" class="btn btn-warning p-0 px-2"><b>View Google Map</b></a>
+                        </div>
+                    </div>
+                
+                `
+                wrapper.append(div)
+                document.body.append(wrapper)
+            })
+           
+        }    
+    </script>
+</body>
+</html>
