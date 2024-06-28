@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML + CSS + BOOTSTRAP + JS + DOM + ADJS -->
+     <!-- CRUD APP
+     C:CREATE >POST    > ADD DATA TO THE SERVER
+     R:READ   >GET     > RETRIVE DATA FROM THE SERVER
+     U:UPDATE >PUT     > MODIFY DATA
+     D:DELETE >DELETE  > DELETE DATA
+     
+     FB/INSTA/TITOK/LINKEDIN....ETC...
+
+     -->
+     <!-- <button onclick="getUserData()">GET ALL USER</button> -->
+      <div class="container mt-5 w-50 border p-4">
+        <div class="input-group mb-3">
+          <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+          <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" id="inputUserName">
+        </div>
+        <div class="input-group mb-3">
+          <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+          <input type="email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" id="inputEmail">
+        </div>
+        <div class="input-group mb-3">
+          <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+          <input type="text" class="form-control" placeholder="PhoneNumber" aria-label="Username" aria-describedby="basic-addon1" id="inputContactNumber">
+        </div>
+        <button class="btn btn-success px-3 py-1" onclick="createUserData()">ADD USER</button>
+    
+      </div>
+      <!-- <button onclick="deleteUserData()">DELETE USER</button>
+     <button onclick="updateUserData()">UPDATE USER</button> -->
+     <table class="table text-center">
+        <thead id="thead">
+          
+        </thead>
+        <tbody id="tbody">
+                  
+        </tbody>
+      </table>
+     <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>  
+    
+    <!-- HTML + CSS + BOOTSTRAP + JS + DOM + ADJS -->
+    <!-- CRUD APP
+    C:CREATE >POST    > ADD DATA TO THE SERVER
+    R:READ   >GET     > RETRIVE DATA FROM THE SERVER
+    U:UPDATE >PUT     > MODIFY DATA
+    D:DELETE >DELETE  > DELETE DATA
+    
+    FB/INSTA/TITOK/LINKEDIN....ETC...
+
+    -->
+    <button onclick="getUserData()">GET ALL USER</button>
+    <button onclick="createUserData()">ADD USER</button>
+    <button onclick="deleteUserData()">DELETE USER</button>
+    <button onclick="updateUserData()">UPDATE USER</button>
+    <script>
+      let url = `https://667e451c297972455f67b213.mockapi.io/crud`;
+
+      // R:READ   >GET     > RETRIVE DATA FROM THE SERVER
+      const getUserData = async () => {
+        let data = await fetch(url);
+        let res = await data.json();
+        console.log(res);
+      };
+      //getUserData()
+
+      // C:CREATE >POST    > ADD DATA TO THE SERVER
+
+      const createUserData = async () => {
+        const newUser = {
+          name: "FSD 60 WD01",
+          email: "fsd6001@gmail.com",
+          phone_number: "767565646",
+        };
+        let data = await fetch(url, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(newUser),
+        });
+        let res = await data.json();
+        console.log(res);
+      };
+      //createUserData()
+
+      // D:DELETE >DELETE  > DELETE DATA
+      // one data at a time
+      // ids comes into picture || unique in nature
+      // i can access specific user/1 user with that id
+
+      const deleteUserData = async () => {
+        let id = 10;
+        console.log(`${url}/${id}`);
+        let data = await fetch(`${url}/${id}`, {
+          method: "DELETE",
+        });
+        let res = await data.json();
+        console.log(res);
+      };
+      // deleteUserData()
+
+      // U:UPDATE >PUT     > MODIFY DATA
+      // one data at a time
+      // ids comes into picture || unique in nature
+      // i can access specific user/1 user with that id
+
+      const updateUserData = async () => {
+        let id = 3;
+        const userToUpdate = {
+          name: "Guvi",
+          email: "guvi@gmail.com",
+          phone_number: 456789,
+        };
+        console.log(`${url}/${id}`);
+        let data = await fetch(`${url}/${id}`, {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(userToUpdate),
+        });
+        let res = await data.json();
+        console.log(res);
+      };
+      // updateUserData()
+    </script>
+  </body>
+</html>
