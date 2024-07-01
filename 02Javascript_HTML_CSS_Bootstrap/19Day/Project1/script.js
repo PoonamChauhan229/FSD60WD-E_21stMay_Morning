@@ -1,4 +1,4 @@
-let url=`https://667e451c297972455f67b213.mockapi.io/crud`
+let url=`https://667e43de297972455f67acef.mockapi.io/crud`
 let tableBody=document.getElementById('tbody')
 let tableHead=document.getElementById('thead')
 
@@ -33,19 +33,23 @@ const getUserData=async()=>{
     res.map((element,index)=>{
         //console.log(element)
         const {name,email,phone_number,id}=element
-        let tr=createNewElement("tr","","id",`tr${index}`)
+        let tr=createNewElement("tr","","id",`tr${id}`)
         //console.log(tr)
         let th1=createNewElement('th',id,'scope',"row")
-        let td1=createNewElement('td',name,"id",`td1${index}`)
-        let td2=createNewElement('td',email,"id",`td2${index}`)
-        let td3=createNewElement('td',phone_number,"id",`td3${index}`)
-        let td4=createNewElement('td',"<button class='btn btn-warning mx-2 px-3 py-1'>Edit</button><button class='btn btn-danger mx-2 px-3 py-1'>Delete</button>","id",`td3${index}`)
+        let td1=createNewElement('td',name,"id",`td1${id}`)
+        let td2=createNewElement('td',email,"id",`td2${id}`)
+        let td3=createNewElement('td',phone_number,"id",`td3${id}`)
+        // let td4=createNewElement('td',"<button class='btn btn-warning mx-2 px-3 py-1'>Edit</button><button class='btn btn-danger mx-2 px-3 py-1'>Delete</button>","id",`td3${index}`)
+        let td4=createNewElement('td',`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=#exampleModal${id} id='edit${id}' onclick="editbtnUser('${id}','${name}','${email}','${phone_number}')" >
+        Edit </button> <button id=delete${id} class="btn btn-danger mx-2 px-3 py-1" onclick='deleteUserData(${id})'>Delete</button>`)
         tr.append(th1,td1,td2,td3,td4)
         tbody.append(tr)
     })
    
 }
 getUserData()
+
+
 
 // C:CREATE >POST    > ADD DATA TO THE SERVER
 
@@ -78,7 +82,8 @@ const getUserSpecificData=async(idNo)=>{
     let td1=createNewElement('td',name,"id",`td1${id}`)
     let td2=createNewElement('td',email,"id",`td2${id}`)
     let td3=createNewElement('td',phone_number,"id",`td3${id}`)
-    let td4=createNewElement('td',"<button class='btn btn-warning mx-2 px-3 py-1'>Edit</button><button class='btn btn-danger mx-2 px-3 py-1'>Delete</button>","id",`td3${id}`)
+    let td4=createNewElement('td',`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=#exampleModal${id} id='edit${id}' onclick="editbtnUser('${id}','${name}','${email}','${phone_number}')" >
+        Edit </button> <button id=delete${id} class="btn btn-danger mx-2 px-3 py-1" onclick='deleteUserData(${id})'>Delete</button>`)
     tr.append(th1,td1,td2,td3,td4)
     tbody.append(tr)
 
@@ -90,14 +95,17 @@ const getUserSpecificData=async(idNo)=>{
 // ids comes into picture || unique in nature
 // i can access specific user/1 user with that id
 
-const deleteUserData=async()=>{
-    let id=10;
-    console.log(`${url}/${id}`)
-    let data=await fetch(`${url}/${id}`,{
+const deleteUserData=async(deleteId)=>{
+    //let deleteId=10;// static one > click on btn we are getting the IDs > we wont pass static
+    console.log(`${url}/${deleteId}`)
+    let data=await fetch(`${url}/${deleteId}`,{
         method:"DELETE"
     })
     let res=await data.json()
     console.log(res)
+    tableHead.innerHTML="";
+    tableBody.innerHTML="";
+    getUserData()
 
 }
 // deleteUserData()
@@ -107,21 +115,76 @@ const deleteUserData=async()=>{
 // ids comes into picture || unique in nature
 // i can access specific user/1 user with that id
 
-const updateUserData=async()=>{
-    let id=3;
+function editbtnUser(editId,editName,editEmail,editPhone_number){
+    console.log("Edit  btn is called",editId,editName,editEmail,editPhone_number)
+    const modal=document.createElement('span')
+    modal.innerHTML=" ";
+
+    modal.innerHTML=`<div class="modal fade" id=exampleModal${editId} tabindex="-1" aria-labelledby=exampleModalLabel${editId} aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <div class="input-group mb-3">
+          <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+          <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" id=modalinputUserName${editId} value='${editName}'>
+        </div>
+        <div class="input-group mb-3">
+          <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+          <input type="email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" id=modalinputEmail${editId} value='${editEmail}'>
+        </div>
+        <div class="input-group mb-3">
+          <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+          <input type="text" class="form-control" placeholder="PhoneNumber" aria-label="Username" aria-describedby="basic-addon1" id=modalinputContactNumber${editId}  value='${editPhone_number}'>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick='updateUserData("${editId}")'>Save changes</button>
+      </div>
+    </div>
+  </div>
+    </div>`
+document.body.append(modal)
+}
+
+const updateUser=(deleteId)=>{
+    console.log("UpdateUser",deleteId)
+    let modalName=document.getElementById('modalinputUserName'+deleteId).value
+    let modalEmail=document.getElementById('modalinputEmail'+deleteId).value
+    let modalContactNumber=document.getElementById('modalinputContactNumber'+deleteId).value
+    console.log(modalName,modalEmail,modalContactNumber)
+
+}
+// updateUser()
+const updateUserData=async(updateId)=>{
+    console.log("UpdateUser",updateId)
+    let modalName=document.getElementById('modalinputUserName'+updateId).value
+    let modalEmail=document.getElementById('modalinputEmail'+updateId).value
+    let modalContactNumber=document.getElementById('modalinputContactNumber'+updateId).value
+    console.log(modalName,modalEmail,modalContactNumber)
     const userToUpdate={
-        name:"Guvi",
-        email:"guvi@gmail.com",
-        phone_number:456789
+        name:modalName,
+        email:modalEmail,
+        phone_number:modalContactNumber
     }
-    console.log(`${url}/${id}`)
-    let data=await fetch(`${url}/${id}`,{
+    console.log(`${url}/${updateId}`)
+    let data=await fetch(`${url}/${updateId}`,{
         method:"PUT",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(userToUpdate)
     })
     let res=await data.json()
     console.log(res)
+    console.log(res.id)
+    console.log(document.getElementById('td1'+updateId))
+    console.log(document.getElementById('td2'+updateId))
+    console.log(document.getElementById('td3'+updateId))
+    document.getElementById('td1'+updateId).innerText=modalName
+    document.getElementById('td2'+updateId).innerText=modalEmail
+    document.getElementById('td3'+updateId).innerText=modalContactNumber
 }
 // updateUserData()
-

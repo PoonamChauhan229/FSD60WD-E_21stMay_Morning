@@ -33,12 +33,14 @@
       //getUserData()
 
       // C:CREATE >POST    > ADD DATA TO THE SERVER
+      let count=0;
 
       const createUserData = async () => {
+        count++;
         const newUser = {
-          name: "FSD 60 WD01",
-          email: "fsd6001@gmail.com",
-          phone_number: "767565646",
+          name: `FSD 60 WD${count}`,
+          email: `fsd60${count}@gmail.com`,
+          phone_number: `76${count}756${count}5646${count}`,
         };
         let data = await fetch(url, {
           method: "POST",
