@@ -1,0 +1,18 @@
+REACT:
+
+WAP to diplay Hello World?
+
+USING HTML ?
+USING JAVASCRIPT ?
+USING REACT
+
+
+REACT > LIBRARY of JS?
+LIBRARY VS FRAMEWORK
+
+CSS > BOOTSTRAP > class="" boostrap 
+>> set of rules/regulations >>> we have work on it
+
+LIBRARY? As per language ? 
+
+
