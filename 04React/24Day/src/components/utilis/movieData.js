@@ -1,4 +1,4 @@
-export const movie=[
+export const allmovies=[
     { 
     name: "RRR",
     poster:"https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/6/Desk/2021_6$largeimg_977224513.JPG",

@@ -2,6 +2,13 @@ import { useState } from "react";
 import Counter from "./Counter";
 
 const Movie=({name,poster,rating,summary})=>{//over the fly destructing
+    //Task:
+    // rating greater than 8 >>>green || red : 15 mins
+    const ratingStyle={
+        // color:"green"
+        //ternary operator 
+        color:rating>8?"green":"red"
+    }
     // console.log(props)
     // const{name,poster,rating,summary}=props
     const [showSummary,setShowSummary]=useState(true)
@@ -10,12 +17,14 @@ const Movie=({name,poster,rating,summary})=>{//over the fly destructing
         <img src={poster} alt="" className="moviePoster"/>
         <h5 className="movieTitle">
             <p>{name}</p>
-            <p>{rating}</p>
+            <p style={ratingStyle}>{rating}</p>
         </h5>
         <h5 className="icons">
             {/* Icons +buttons */}
             <Counter/>
-            <button style={{marginLeft:"10px"}} onClick={()=>setShowSummary(!showSummary)}>💫</button>            
+            <button style={{marginLeft:"10px"}} onClick={()=>setShowSummary(!showSummary)}> 
+                {showSummary?"🔽":" 🔼"}
+                </button>            
         </h5>
         {/* 1st way */}
         {/* conditonal rendering */}
