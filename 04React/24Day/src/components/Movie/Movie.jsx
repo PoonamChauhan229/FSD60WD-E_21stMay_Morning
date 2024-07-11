@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Counter from "./Counter";
+import { useNavigate } from "react-router-dom";
 
-const Movie=({name,poster,rating,summary})=>{//over the fly destructing
+const Movie=({name,poster,rating,summary,id})=>{//over the fly destructing
+    const navigate=useNavigate()
     //Task:
     // rating greater than 8 >>>green || red : 15 mins
     const ratingStyle={
@@ -24,7 +26,12 @@ const Movie=({name,poster,rating,summary})=>{//over the fly destructing
             <Counter/>
             <button style={{marginLeft:"10px"}} onClick={()=>setShowSummary(!showSummary)}> 
                 {showSummary?"🔽":" 🔼"}
-                </button>            
+            </button>
+
+            <button style={{marginLeft:"10px"}}
+            onClick={()=>{navigate(`/movie/${id}`)}}
+            >Info</button>  
+                      {/*  Movie Info || Movie Details*/}
         </h5>
         {/* 1st way */}
         {/* conditonal rendering */}

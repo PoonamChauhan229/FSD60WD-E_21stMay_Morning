@@ -9,7 +9,7 @@ const MovieDisplay=(props)=>{
         {
             // movie.map((element,index)=><Movie singleMovie={element}/>)
             movieList.map((element,index)=><Movie name={element.name} poster={element.poster}
-            rating={element.rating} summary={element.summary} key={index}/>)
+            rating={element.rating} summary={element.summary} key={index} id={index}/>)
         }
         
         </div>
