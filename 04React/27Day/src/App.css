@@ -1,0 +1,40 @@
+.movieCard{
+    border:1px solid navy;
+    width: 250px;
+    height: 380px;
+    margin:5px;    
+    border-radius: 3%;
+    overflow: hidden;
+    padding: 5px;
+}
+.moviePoster{
+    width:250px;
+    height: 250px;    
+    border-radius: 3%;
+}
+.App{
+    display: flex;
+    flex-wrap: wrap;
+    /* text-align: center; */
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+.movieTitle{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+    margin: 5px 8px 3px 8px;
+}
+.movieSummary{
+    font-size: 13px;
+    /* text-align: center; */
+    padding: 0px 8px;
+}
+body{
+    background-color: black;
+    color:white
+}
