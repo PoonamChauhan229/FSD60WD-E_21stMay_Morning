@@ -11,13 +11,18 @@ import Page404 from './components/Movie/Page404'
 import MovieDetails from './components/Movie/MovieDetails'
 import Navbar_Mui from './components/Movie/Navbar_Mui'
 import AddMovie_MUI from './components/Movie/AddMovie_MUI'
+import MovieCard_MUI from './components/Movie/MovieCard_MUI'
+import cartContext from './components/utilis/cartContext'
+
 function App() {
   const [movieList,setMovieList]=useState(allmovies)
+  const [cartUseCxt,setCartUseCxt]=useState(0)
   return (
-   <>
+   <cartContext.Provider value={[cartUseCxt,setCartUseCxt]}>
    {/* App.jsx should be neat and tidy */}
-   <Navbar/>
+   {/* <Navbar> */}
    <Navbar_Mui/>
+   {/* <MovieCard_MUI/> */}
   <Routes>
     <Route path='/home' element={<HomePage movieList={movieList} setMovieList={setMovieList}/>}/>
     <Route path='/addmovie' element={ <AddMovie movieList={movieList} setMovieList={setMovieList} />}/>
@@ -44,9 +49,8 @@ function App() {
         
   
   </Routes>
-   </>
+   </cartContext.Provider>
    
-    
   )
 }
 

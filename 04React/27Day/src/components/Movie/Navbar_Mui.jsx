@@ -13,10 +13,14 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import cartContext from '../utilis/cartContext';
 
 const pages = ['Home', 'AllMovies',"AddMovie_MUI","AddMovie"];
 
 function Navbar_Mui() {
+    const cartValue=useContext(cartContext)
+    
     const navigate=useNavigate()
    return (
     <AppBar position="static">
@@ -51,6 +55,7 @@ function Navbar_Mui() {
              {page}
               </Button>
             ))}
+            {cartValue}
           </Box>
 
         </Toolbar>
