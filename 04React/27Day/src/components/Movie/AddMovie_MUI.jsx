@@ -9,6 +9,16 @@ const AddMovie_MUI = ({movieList,setMovieList})=>{
     const [movieRating,setMovieRating]=useState("")
     const [movieSummary,setMovieSummary]=useState("")
     const [movieTrailer,setMovieTrailer]=useState("")
+    const postMovies=async(movie)=>{
+      console.log(movie)
+      let data = await fetch("https://6695fead0312447373c0a4cf.mockapi.io/Movie", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(movie),
+        });
+        let res = await data.json();
+        console.log(res);
+  }
   return (
     <>
       <Box
@@ -75,9 +85,10 @@ const AddMovie_MUI = ({movieList,setMovieList})=>{
             rating:movieRating,
             summary:movieSummary
         }
-        console.log(movie)
-        setMovieList([...movieList,movie])
-        console.log(movieList)
+        // console.log(movie)
+        // setMovieList([...movieList,movie])
+        // console.log(movieList)
+        postMovies(movie)
     }}
       sx={{ margin: "1% 10%",padding:"0.4% 5%"}}
       >Add Movie</Button>

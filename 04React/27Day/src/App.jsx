@@ -13,6 +13,7 @@ import Navbar_Mui from './components/Movie/Navbar_Mui'
 import AddMovie_MUI from './components/Movie/AddMovie_MUI'
 import MovieCard_MUI from './components/Movie/MovieCard_MUI'
 import cartContext from './components/utilis/cartContext'
+import EditMovie from './components/Movie/EditMovie'
 
 function App() {
   const [movieList,setMovieList]=useState(allmovies)
@@ -41,6 +42,7 @@ function App() {
     
     {/* dynamic routing */}
     <Route path="/movie/:id" element={<MovieDetails movieList={movieList}/>}/>
+    <Route path="/edit/:id" element={<EditMovie/>}/>
      {/* Error Page || Page Not Found Error */}
     
      {/* /7878  to /404  || 10-12 min*/} 

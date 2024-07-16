@@ -19,12 +19,32 @@ import { useNavigate } from "react-router-dom";
 import Counter from './Counter';
 import { useContext } from 'react';
 import cartContext from '../utilis/cartContext';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { useEffect } from 'react';
+import EditAttributesIcon from '@mui/icons-material/EditAttributes';
 
-export default function MovieCard_MUI({name,poster,rating,summary,id}) {
+export default function MovieCard_MUI({name,poster,rating,summary,id,setMovieList}) {
     const [showSummary,setShowSummary]=useState(true)
     const [heart,setHeart]=useState("primary")
     const navigate=useNavigate()
     const [cartUseCxt,setCartUseCxt]=useContext(cartContext)
+
+    const deleteMovie=async(id)=>{
+      let data = await fetch(`https://6695fead0312447373c0a4cf.mockapi.io/Movie/${id}`, {
+        method: "DELETE",
+      });
+      let res = await data.json();
+      console.log(res);
+      getMovies()
+
+    }
+    const getMovies=async()=>{
+      let data=await fetch('https://6695fead0312447373c0a4cf.mockapi.io/Movie')
+      let res=await data.json()
+      console.log(res)
+      setMovieList(res)
+  }
+ 
 
   return (
     <Card sx={{ width: 345 }}>
@@ -61,11 +81,26 @@ export default function MovieCard_MUI({name,poster,rating,summary,id}) {
          {/* Like dislike */}
         <Counter/>
 
+        <IconButton color="error"        
+        onClick={()=>{
+          deleteMovie(id)
+        }}>
+         <DeleteIcon/>
+        </IconButton>
+
+      <IconButton color="primary"
+      onClick={()=>{
+        navigate(`/edit/${id}`)
+      }}>
+      <EditAttributesIcon/>
+      </IconButton>
       <button
       onClick={()=>{
         setCartUseCxt(cartUseCxt+1)
       }}
       >Addto Cart</button>
+
+
 
         
       </CardActions>

@@ -6,6 +6,8 @@ function AddMovie({movieList,setMovieList}){
     const [moviePoster,setMoviePoster]=useState("")
     const [movieRating,setMovieRating]=useState("")
     const [movieSummary,setMovieSummary]=useState("")
+
+   
 return(
     <>
     <h3>Add Movie</h3>
@@ -27,9 +29,10 @@ return(
         }
         console.log(movie)
         setMovieList([...movieList,movie])
+     
     }}
     >AddMovie</button>
-    <Button variant="outlined">Add Movie</Button>
+    {/* <Button variant="outlined">Add Movie</Button> */}
 
     <br/><br/>
     </>
