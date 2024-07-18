@@ -35,6 +35,24 @@
     padding: 0px 8px;
 }
 body{
-    background-color: black;
-    color:white
+    /* background-color: black;
+    color:white */
+}
+
+.gamebox{
+    height: 100px;
+    width:100px;
+    border:1px solid black;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.board{
+    width:303px;
+    border:1px solid red;
+    display: grid;
+    grid-template-columns: auto auto auto;
+
 }

@@ -55,6 +55,9 @@ function Navbar_Mui() {
              {page}
               </Button>
             ))}
+            <Button 
+            sx={{ mx: 1, color: 'white', display: 'block' ,padding:0,height:"20px",}}
+            onClick={()=>{navigate('/tictactoe')}}>TicTacToe</Button>
             {cartValue}
           </Box>
 
