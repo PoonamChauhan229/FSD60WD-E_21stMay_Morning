@@ -15,10 +15,12 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import cartContext from '../utilis/cartContext';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 const pages = ['Home', 'AllMovies',"AddMovie_MUI","AddMovie"];
 
-function Navbar_Mui() {
+function Navbar_Mui({mode,setMode}) {
     const cartValue=useContext(cartContext)
     
     const navigate=useNavigate()
@@ -59,6 +61,22 @@ function Navbar_Mui() {
             sx={{ mx: 1, color: 'white', display: 'block' ,padding:0,height:"20px",}}
             onClick={()=>{navigate('/tictactoe')}}>TicTacToe</Button>
             {cartValue}
+
+            {/* <Button 
+             sx={{ mx: 1, color: 'white', display: 'block' ,padding:0,height:"20px"}}
+             onClick={()=>{setMode(mode==="light"?"dark":"light")}}
+            >{mode==="light"?<><DarkModeIcon/> Dark</>:<><LightModeIcon/> Light</>}</Button> */}
+
+
+            <Button
+            // variant="contained"
+            sx={{color: 'white'}}
+            component="label"               
+            startIcon={mode==="light"?<DarkModeIcon/>:<LightModeIcon/>} 
+            onClick={()=>{setMode(mode==="light"?"dark":"light")}}>
+            {mode==="light"?"dark":"light"}
+          </Button>
+
           </Box>
 
         </Toolbar>

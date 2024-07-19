@@ -3,22 +3,30 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
 import { useState } from "react"
+import axios from "axios";
 const AddMovie_MUI = ({movieList,setMovieList})=>{
     const [movieName,setMovieName]=useState("")
     const [moviePoster,setMoviePoster]=useState("")
     const [movieRating,setMovieRating]=useState("")
     const [movieSummary,setMovieSummary]=useState("")
     const [movieTrailer,setMovieTrailer]=useState("")
-    const postMovies=async(movie)=>{
-      console.log(movie)
-      let data = await fetch("https://6695fead0312447373c0a4cf.mockapi.io/Movie", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(movie),
-        });
-        let res = await data.json();
-        console.log(res);
+    // adding movies using fetch
+  //   const postMovies=async(movie)=>{
+  //     console.log(movie)
+  //     let data = await fetch("https://6695fead0312447373c0a4cf.mockapi.io/Movie", {
+  //         method: "POST",
+  //         headers: { "content-type": "application/json" },
+  //         body: JSON.stringify(movie),
+  //       });
+  //       let res = await data.json();
+  //       console.log(res);
+  // }
+  // adding movies using axios
+  const postMovies=async(movie)=>{
+    let response=await axios.post("https://6695fead0312447373c0a4cf.mockapi.io/Movie",movie)
+    console.log(response.data)
   }
+
   return (
     <>
       <Box

@@ -15,17 +15,28 @@ import MovieCard_MUI from './components/Movie/MovieCard_MUI'
 import cartContext from './components/utilis/cartContext'
 import EditMovie from './components/Movie/EditMovie'
 import TicTacToe from './components/TicTacToe/TicTacToe'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
   const [movieList,setMovieList]=useState(allmovies)
   const [cartUseCxt,setCartUseCxt]=useState(0)
+  const [mode,setMode]=useState('dark')
+  const theme = createTheme({
+   palette: {
+     mode: mode,
+   },
+ });
   return (
+   <ThemeProvider theme={theme}>
+      <CssBaseline />
    <cartContext.Provider value={[cartUseCxt,setCartUseCxt]}>
    {/* App.jsx should be neat and tidy */}
    {/* <Navbar> */}
-   <Navbar_Mui/>
+   <Navbar_Mui mode={mode} setMode={setMode}/>
    {/* <MovieCard_MUI/> */}
   <Routes>
+   <Route path='/' element={<HomePage/>}/>
     <Route path='/home' element={<HomePage movieList={movieList} setMovieList={setMovieList}/>}/>
     <Route path='/addmovie' element={ <AddMovie movieList={movieList} setMovieList={setMovieList} />}/>
     <Route path='/color' element={ <AddColor/>}/>
@@ -38,6 +49,7 @@ function App() {
     /films to /allmovies
     {<Navigate replace to '/allmovies'/>}
     */}
+   
     <Route path="/allmovies" element={ <MovieDisplay movieList={movieList}/>}/>
     <Route path='/films' element={<Navigate replace to ='/allmovies'/>}/>
     
@@ -55,7 +67,7 @@ function App() {
   
   </Routes>
    </cartContext.Provider>
-   
+   </ThemeProvider>
   )
 }
 

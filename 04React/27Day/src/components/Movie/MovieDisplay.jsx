@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Movie from "./Movie";
 import MovieCard_MUI from "./MovieCard_MUI";
+import axios from "axios";
 
 const MovieDisplay=()=>{
     // Destructing 
@@ -8,13 +9,21 @@ const MovieDisplay=()=>{
     // console.log(movieList)
     const [movieList,setMovieList]=useState([])
 
+    // using fetch
+    // const getMovies=async()=>{
+    //     let data=await fetch('https://6695fead0312447373c0a4cf.mockapi.io/Movie')
+    //     let res=await data.json()
+    //     console.log(res)
+    //     setMovieList(res)
+    // }
 
+    // using axios
     const getMovies=async()=>{
-        let data=await fetch('https://6695fead0312447373c0a4cf.mockapi.io/Movie')
-        let res=await data.json()
-        console.log(res)
-        setMovieList(res)
+       let response=await axios.get('https://6695fead0312447373c0a4cf.mockapi.io/Movie')
+       console.log(response.data)
+       setMovieList(response.data) 
     }
+
     useEffect(()=>{
         getMovies()
     },[])

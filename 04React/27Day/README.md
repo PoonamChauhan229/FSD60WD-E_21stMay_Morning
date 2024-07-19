@@ -23,3 +23,18 @@ dependancy array:
 useEffect(()=>{})                >> Without Dependancy array- Going render to again & again
 useEffect(()=>{},[])             >> With Dependancy array - Page Loads in browser > Render > initial Render
 useEffect(()=>{},["changeInVal"])>> With Dependancy array + item >> Initial Render + item change >> Rerender
+
+
+CRUD
+
+FETCH
+CREATE   >POST
+READ     >GET
+UPDATE   >PUT
+DELTE    >DELETE
+
+AXIOS
+CREATE   >POST
+READ     >GET
+UPDATE   >PUT
+DELTE    >DELETE

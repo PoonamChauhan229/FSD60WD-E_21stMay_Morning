@@ -22,27 +22,41 @@ import cartContext from '../utilis/cartContext';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect } from 'react';
 import EditAttributesIcon from '@mui/icons-material/EditAttributes';
-
+import axios from 'axios'
 export default function MovieCard_MUI({name,poster,rating,summary,id,setMovieList}) {
     const [showSummary,setShowSummary]=useState(true)
     const [heart,setHeart]=useState("primary")
     const navigate=useNavigate()
     const [cartUseCxt,setCartUseCxt]=useContext(cartContext)
 
+    //using fetch > delete
+    // const deleteMovie=async(id)=>{
+    //   let data = await fetch(`https://6695fead0312447373c0a4cf.mockapi.io/Movie/${id}`, {
+    //     method: "DELETE",
+    //   });
+    //   let res = await data.json();
+    //   console.log(res);
+    //   getMovies()
+    // }
     const deleteMovie=async(id)=>{
-      let data = await fetch(`https://6695fead0312447373c0a4cf.mockapi.io/Movie/${id}`, {
-        method: "DELETE",
-      });
-      let res = await data.json();
-      console.log(res);
+      let response=await axios.delete(`https://6695fead0312447373c0a4cf.mockapi.io/Movie/${id}`)
+      console.log(response.data)
       getMovies()
-
     }
-    const getMovies=async()=>{
-      let data=await fetch('https://6695fead0312447373c0a4cf.mockapi.io/Movie')
-      let res=await data.json()
-      console.log(res)
-      setMovieList(res)
+
+    //using fetch > get 
+  //   const getMovies=async()=>{
+  //     let data=await fetch('https://6695fead0312447373c0a4cf.mockapi.io/Movie')
+  //     let res=await data.json()
+  //     console.log(res)
+  //     setMovieList(res)
+  // }
+
+  // using axios > get
+  const getMovies=async()=>{
+    let response=await axios.get('https://6695fead0312447373c0a4cf.mockapi.io/Movie')
+    console.log(response.data)
+    setMovieList(response.data)
   }
  
 
