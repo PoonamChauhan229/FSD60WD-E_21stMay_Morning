@@ -17,6 +17,8 @@ import EditMovie from './components/Movie/EditMovie'
 import TicTacToe from './components/TicTacToe/TicTacToe'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import BasicForm_Formik from './components/Formik/BasicForm_Formik'
+import Formik_AddMovie from './components/Formik/Formik_AddMovie '
 
 function App() {
   const [movieList,setMovieList]=useState(allmovies)
@@ -34,6 +36,8 @@ function App() {
    {/* App.jsx should be neat and tidy */}
    {/* <Navbar> */}
    <Navbar_Mui mode={mode} setMode={setMode}/>
+    {/* <BasicForm_Formik/> */}
+    <Formik_AddMovie/>
    {/* <MovieCard_MUI/> */}
   <Routes>
    <Route path='/' element={<HomePage/>}/>

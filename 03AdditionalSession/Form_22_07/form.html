@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" name="username" id="username" placeholder="username">
+        <p></p>
+       <input type="password" name="password" id="password" placeholder="password">
+       <p></p>
+       <input type="submit" value="Submit">
+    </form>
+    <script>
+        function handleSubmit(event){
+            event.preventDefault()
+            const name=document.getElementById('username').value
+            const password=document.getElementById('password').value
+            // console.log("Form Submitted",name,password)
+            console.log(`Form Submiited Succesfully, name is ${name} and password is ${password}`)
+        }
+    </script>
+</body>
+</html>
