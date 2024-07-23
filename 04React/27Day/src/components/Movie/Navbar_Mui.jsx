@@ -17,11 +17,14 @@ import { useContext } from 'react';
 import cartContext from '../utilis/cartContext';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import { useSelector } from 'react-redux';
 
 const pages = ['Home', 'AllMovies',"AddMovie_MUI","AddMovie"];
 
 function Navbar_Mui({mode,setMode}) {
     const cartValue=useContext(cartContext)
+    const cartItems=useSelector(store=>store.cart.items)
+    console.log(cartItems)
     
     const navigate=useNavigate()
    return (
@@ -60,13 +63,17 @@ function Navbar_Mui({mode,setMode}) {
             <Button 
             sx={{ mx: 1, color: 'white', display: 'block' ,padding:0,height:"20px",}}
             onClick={()=>{navigate('/tictactoe')}}>TicTacToe</Button>
-            {cartValue}
+            <Button>{cartValue}</Button>
 
             {/* <Button 
              sx={{ mx: 1, color: 'white', display: 'block' ,padding:0,height:"20px"}}
              onClick={()=>{setMode(mode==="light"?"dark":"light")}}
             >{mode==="light"?<><DarkModeIcon/> Dark</>:<><LightModeIcon/> Light</>}</Button> */}
 
+          <Button 
+            sx={{ mx: 1, color: 'white', display: 'block' ,padding:0,height:"20px",}}
+            onClick={()=>{navigate('/cartPage')}}
+           >Redux Cart-{cartItems.length}</Button>
 
             <Button
             // variant="contained"

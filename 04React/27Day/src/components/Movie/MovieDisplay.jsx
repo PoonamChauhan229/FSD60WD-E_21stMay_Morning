@@ -36,7 +36,7 @@ const MovieDisplay=()=>{
             // rating={element.rating} summary={element.summary} key={index} id={index}/>)
 
             movieList.map((element,index)=><MovieCard_MUI name={element.name} poster={element.poster}
-            rating={element.rating} summary={element.summary} key={index} id={element.id} setMovieList={setMovieList}/>)
+            rating={element.rating} summary={element.summary} key={index} id={element.id} setMovieList={setMovieList} element={element}/>)
         }
         
         </div>

@@ -23,11 +23,19 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect } from 'react';
 import EditAttributesIcon from '@mui/icons-material/EditAttributes';
 import axios from 'axios'
-export default function MovieCard_MUI({name,poster,rating,summary,id,setMovieList}) {
+import { useDispatch } from 'react-redux'
+import { addItem } from '../utilis/cartSlice';
+export default function MovieCard_MUI({name,poster,rating,summary,id,setMovieList,element}) {
     const [showSummary,setShowSummary]=useState(true)
     const [heart,setHeart]=useState("primary")
     const navigate=useNavigate()
     const [cartUseCxt,setCartUseCxt]=useContext(cartContext)
+    // Redux
+    const dispatch=useDispatch()
+    const handleAddItem=(element)=>{
+      console.log(element)
+      dispatch(addItem(element))
+    }
 
     //using fetch > delete
     // const deleteMovie=async(id)=>{
@@ -113,6 +121,10 @@ export default function MovieCard_MUI({name,poster,rating,summary,id,setMovieLis
         setCartUseCxt(cartUseCxt+1)
       }}
       >Addto Cart</button>
+      {/*  REdux btn */}
+      <button
+      onClick={()=>handleAddItem(element)}
+      >Add to Redux Cart</button>
 
 
 

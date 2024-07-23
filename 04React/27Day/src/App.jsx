@@ -19,6 +19,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import BasicForm_Formik from './components/Formik/BasicForm_Formik'
 import Formik_AddMovie from './components/Formik/Formik_AddMovie '
+import { Provider } from 'react-redux'
+import store from './components/utilis/store'
+import CartPage from './components/Movie/CartPage'
 
 function App() {
   const [movieList,setMovieList]=useState(allmovies)
@@ -30,48 +33,50 @@ function App() {
    },
  });
   return (
-   <ThemeProvider theme={theme}>
-      <CssBaseline />
-   <cartContext.Provider value={[cartUseCxt,setCartUseCxt]}>
-   {/* App.jsx should be neat and tidy */}
-   {/* <Navbar> */}
-   <Navbar_Mui mode={mode} setMode={setMode}/>
-    {/* <BasicForm_Formik/> */}
-    <Formik_AddMovie/>
-   {/* <MovieCard_MUI/> */}
-  <Routes>
-   <Route path='/' element={<HomePage/>}/>
-    <Route path='/home' element={<HomePage movieList={movieList} setMovieList={setMovieList}/>}/>
-    <Route path='/addmovie' element={ <AddMovie movieList={movieList} setMovieList={setMovieList} />}/>
-    <Route path='/color' element={ <AddColor/>}/>
-    <Route path='/addmovie_mui' element={ <AddMovie_MUI movieList={movieList} setMovieList={setMovieList} />}/>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+        <CssBaseline />
+    <cartContext.Provider value={[cartUseCxt,setCartUseCxt]}>
+    {/* App.jsx should be neat and tidy */}
+    {/* <Navbar> */}
+    <Navbar_Mui mode={mode} setMode={setMode}/>
+      {/* <BasicForm_Formik/> */}
+      {/* <Formik_AddMovie/> */}
+    {/* <MovieCard_MUI/> */}
+    <Routes>
+    <Route path='/' element={<HomePage/>}/>
+      <Route path='/home' element={<HomePage movieList={movieList} setMovieList={setMovieList}/>}/>
+      <Route path='/addmovie' element={ <AddMovie movieList={movieList} setMovieList={setMovieList} />}/>
+      <Route path='/color' element={ <AddColor/>}/>
+      <Route path='/addmovie_mui' element={ <AddMovie_MUI movieList={movieList} setMovieList={setMovieList} />}/>
+      <Route path='cartPage' element={<CartPage/>}/>
+      
+        {/* Any website migrating a new link ? Old customers + new customers 
+      New customers ?
+      Old customers ? millions of users + so incase need to handle with react?
+      /films to /allmovies
+      {<Navigate replace to '/allmovies'/>}
+      */}
     
-    
-       {/* Any website migrating a new link ? Old customers + new customers 
-    New customers ?
-    Old customers ? millions of users + so incase need to handle with react?
-    /films to /allmovies
-    {<Navigate replace to '/allmovies'/>}
-    */}
-   
-    <Route path="/allmovies" element={ <MovieDisplay movieList={movieList}/>}/>
-    <Route path='/films' element={<Navigate replace to ='/allmovies'/>}/>
-    
-    {/* dynamic routing */}
-    <Route path="/movie/:id" element={<MovieDetails movieList={movieList}/>}/>
-    <Route path="/edit/:id" element={<EditMovie/>}/>
+      <Route path="/allmovies" element={ <MovieDisplay movieList={movieList}/>}/>
+      <Route path='/films' element={<Navigate replace to ='/allmovies'/>}/>
+      
+      {/* dynamic routing */}
+      <Route path="/movie/:id" element={<MovieDetails movieList={movieList}/>}/>
+      <Route path="/edit/:id" element={<EditMovie/>}/>
 
-    <Route path='/tictactoe' element={<TicTacToe/>}/>
-     {/* Error Page || Page Not Found Error */}
+      <Route path='/tictactoe' element={<TicTacToe/>}/>
+      {/* Error Page || Page Not Found Error */}
+      
+      {/* /7878  to /404  || 10-12 min*/} 
+      <Route path='/404' element={<Page404/>}/>
+      <Route path='*' element={<Navigate replace to= '/404'/>}/>
+          
     
-     {/* /7878  to /404  || 10-12 min*/} 
-     <Route path='/404' element={<Page404/>}/>
-     <Route path='*' element={<Navigate replace to= '/404'/>}/>
-        
-  
-  </Routes>
-   </cartContext.Provider>
-   </ThemeProvider>
+    </Routes>
+    </cartContext.Provider>
+    </ThemeProvider>
+  </Provider>
   )
 }
 
