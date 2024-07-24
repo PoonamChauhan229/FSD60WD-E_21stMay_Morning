@@ -75,6 +75,12 @@ function Navbar_Mui({mode,setMode}) {
             onClick={()=>{navigate('/cartPage')}}
            >Redux Cart-{cartItems.length}</Button>
 
+
+          <Button 
+            sx={{ mx: 1, color: 'white', display: 'block' ,padding:0,height:"20px",}}
+            onClick={()=>{navigate('/classComponent')}}
+           >Class</Button>
+
             <Button
             // variant="contained"
             sx={{color: 'white'}}

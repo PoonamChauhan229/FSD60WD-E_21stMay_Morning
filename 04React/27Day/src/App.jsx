@@ -22,6 +22,7 @@ import Formik_AddMovie from './components/Formik/Formik_AddMovie '
 import { Provider } from 'react-redux'
 import store from './components/utilis/store'
 import CartPage from './components/Movie/CartPage'
+import Classprofile from './components/classcomponent/ClassProfile'
 
 function App() {
   const [movieList,setMovieList]=useState(allmovies)
@@ -43,6 +44,7 @@ function App() {
       {/* <BasicForm_Formik/> */}
       {/* <Formik_AddMovie/> */}
     {/* <MovieCard_MUI/> */}
+
     <Routes>
     <Route path='/' element={<HomePage/>}/>
       <Route path='/home' element={<HomePage movieList={movieList} setMovieList={setMovieList}/>}/>
@@ -66,6 +68,7 @@ function App() {
       <Route path="/edit/:id" element={<EditMovie/>}/>
 
       <Route path='/tictactoe' element={<TicTacToe/>}/>
+      <Route path='/classComponent' element={<Classprofile/>}/>
       {/* Error Page || Page Not Found Error */}
       
       {/* /7878  to /404  || 10-12 min*/} 
