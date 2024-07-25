@@ -1,0 +1,104 @@
+DATABASE : 
+
+NO SQL:
+Documents 
+{key:value}
+
+SQL :
+SQL DATABASE : > TABLES ==> Rows and cols
+STRUCTURED QUERY LANGUAGE
+RELATIONAL DATABASE
+USERS TABLE
+roll| name |age
+ 1  |  ab  | 23
+ 2  |  eb  | 24
+ 3  |  rb  | 25
+ 4  |  tb  | 26
+ 5  |  yb  | 27 
+ 6  |  ub  | 28 
+
+MYSQL :
+
+RETREIVE
+SELECT STATEMENT/QUERY
+
+SELECT roll FROM USERS;
+
+SELECT NAME,AGE FROM USERS;
+
+SELECT * FROM USERS;
+
+
+EX1 :
+-- SELECT TITLE FROM MOVIES;
+-- SELECT DIRECTOR FROM MOVIES;
+-- SELECT TITLE,DIRECTOR FROM MOVIES;
+-- SELECT TITLE,YEAR FROM MOVIES;
+-- SELECT * FROM MOVIES
+
+
+RETREIVE > WITH CONSTRAINT > WHERE CLAUSE
+SELECT NAME FROM USERS
+WHERE ROLL=2
+
+SELECT ROLL FROM USERS
+WHERE AGE =25
+
+Operator	                        Condition	                                            SQL Example
+=, !=, < <=, >, >=                 	Standard numerical operators	                        col_name != 4
+BETWEEN … AND …	                    Number is within range of two values (inclusive)	    col_name BETWEEN 1.5 AND 10.5
+NOT BETWEEN … AND …	                Number is not within range of two values (inclusive)	col_name NOT BETWEEN 1 AND 10
+IN (…)	                            Number exists in a list	                                col_name IN (2, 4, 6)
+NOT IN (…)	                        Number does not exist in a list	                        col_name NOT IN (1, 3, 5)
+
+EX2 :
+-- SELECT TITLE FROM MOVIES WHERE ID=6;
+-- SELECT TITLE FROM MOVIES WHERE YEAR BETWEEN 2000 AND 2010
+-- SELECT TITLE FROM MOVIES WHERE YEAR NOT BETWEEN 2000 AND 2010
+
+-- SELECT TITLE FROM MOVIES WHERE ID BETWEEN 1 AND 5;
+-- SELECT TITLE FROM MOVIES WHERE ID IN(1,2,3,4,5);
+
+EX3:
+
+-- SELECT * FROM MOVIES WHERE TITLE LIKE"%Toy%";
+
+-- SELECT * FROM MOVIES WHERE DIRECTOR LIKE"John Lasseter";
+-- SELECT * FROM MOVIES WHERE DIRECTOR ="John Lasseter";
+-- SELECT * FROM MOVIES WHERE DIRECTOR LIKE"%John Lasseter%"
+-- SELECT * FROM MOVIES WHERE DIRECTOR IN("John Lasseter")
+
+-- SELECT * FROM MOVIES WHERE DIRECTOR NOT LIKE"John Lasseter";
+-- SELECT * FROM MOVIES WHERE DIRECTOR !="John Lasseter";
+-- SELECT * FROM MOVIES WHERE DIRECTOR NOT LIKE"%John Lasseter%"
+-- SELECT * FROM MOVIES WHERE DIRECTOR NOT IN("John Lasseter")
+
+-- SELECT * FROM MOVIES WHERE TITLE LIKE"%WALL-%";
+
+EX4:
+-- SELECT DISTINCT DIRECTOR FROM MOVIES ORDER BY DIRECTOR ASC;
+-- SELECT * FROM MOVIES ORDER BY YEAR DESC LIMIT 4;
+-- SELECT * FROM MOVIES ORDER BY TITLE ASC LIMIT 5;
+-- SELECT * FROM MOVIES ORDER BY TITLE ASC LIMIT 5 OFFSET 5;
+
+EX6:
+-- SELECT Domestic_sales,International_sales FROM MOVIES
+-- INNER JOIN BOXOFFICE ON MOVIES.Id=BOXOFFICE.Movie_id;
+
+-- SELECT TITLE,Domestic_sales,International_sales FROM MOVIES
+-- INNER JOIN BOXOFFICE ON MOVIES.Id=BOXOFFICE.Movie_id
+-- WHERE International_sales>Domestic_sales;
+
+-- SELECT TITLE,RATING FROM MOVIES
+-- INNER JOIN BOXOFFICE ON MOVIES.Id=BOXOFFICE.Movie_id
+-- ORDER BY RATING DESC;
+
+EX7:
+testinG
+SELECT * FROM employees LEFT JOIN Buildings 
+ON EMPLOYEES.Building =Buildings.Building_name
+
+-- SELECT DISTINCT Building from employees
+-- SELECT * FROM Buildings;
+-- SELECT DISTINCT Building_name,Role FROM Buildings LEFT JOIN  employees
+-- ON EMPLOYEES.Building =Buildings.Building_name
