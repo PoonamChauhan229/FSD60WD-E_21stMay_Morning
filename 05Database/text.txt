@@ -102,3 +102,65 @@ ON EMPLOYEES.Building =Buildings.Building_name
 -- SELECT * FROM Buildings;
 -- SELECT DISTINCT Building_name,Role FROM Buildings LEFT JOIN  employees
 -- ON EMPLOYEES.Building =Buildings.Building_name
+
+Ex8:
+
+SELECT Name,role from Employees where building is null;
+
+SELECT DISTINCT Building_name,Role FROM Buildings LEFT JOIN  employees
+ON EMPLOYEES.Building =Buildings.Building_name
+where EMPLOYEES.Building is null;
+
+Ex9:
+-- SELECT Title,(Domestic_sales+International_sales)/1000000 AS Sales
+-- FROM MOVIES
+-- INNER JOIN BOXOFFICE
+-- ON MOVIES.Id=BOXOFFICE.Movie_id
+
+-- SELECT Title,(Rating*10) AS Rating_Percent
+-- FROM MOVIES
+-- INNER JOIN BOXOFFICE
+-- ON MOVIES.Id=BOXOFFICE.Movie_id
+
+--SELECT * FROM MOVIES WHERE YEAR%2=0;
+
+Ex10:
+-- SELECT MAX(Years_employed) FROM employees;
+
+-- SELECT ROLE,AVG(	Years_employed) FROM EMPLOYEES GROUP BY ROLE
+
+-- SELECT BUILDING,SUM(Years_employed) FROM EMPLOYEES GROUP BY BUILDING
+
+Ex11:
+Ex12:
+
+Ex13:
+INSERT INTO MOVIES (TITLE,DIRECTOR) VALUES("Toy Story 4","Pradeep")
+INSERT INTO BOXOFFICE (Movie_id,Rating,Domestic_sales,International_sales) VALUES(15,8.7,340000000,270000000)
+
+Ex14:
+UPDATE Movies SET Director="John Lasseter" WHERE TITLE="A Bug's Life";
+UPDATE MOVIES SET YEAR=1999 WHERE TITLE="Toy Story 2";
+UPDATE MOVIES SET DIRECTOR="Lee Unkrich",TITLE="Toy Story 3" WHERE TITLE="Toy Story 8";
+
+EX15:
+DELETE FROM MOVIES WHERE YEAR <2005
+DELETE FROM MOVIES WHERE DIRECTOR="Andrew Stanton"
+
+EX16:
+CREATE TABLE database(name varchar(10),version float,download_count int);
+
+Ex17:
+
+ALTER TABLE MOVIES
+ADD COLUMN Aspect_ratio FLOAT;
+
+ALTER TABLE MOVIES
+ADD COLUMN LANGUAGE TEXT
+DEFAULT "English";
+
+
+Ex18:
+DROP TABLE movies;
+DROP TABLE BOXOFFICE;
+
