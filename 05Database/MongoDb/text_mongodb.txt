@@ -1,0 +1,110 @@
+mongosh  >> Start ur mongodb server
+
+show dbs 
+local
+admin
+config
+System Db , we wont be touching this , its not for us.
+
+fsd60db  >> create db with dbname - fsd60db
+use dbName
+use fsd60db
+
+MONGODB : NO SQL Db
+        : Collections
+
+Create DB >> atleast 1 Collections
+db.createCollection('CollectionName')
+db.createCollection('test')
+
+show dbs
+
+created Collections
+
+show Collections
+test
+test1
+test2
+
+
+CRUD 
+C CREATE  >>insertOne() || insertMany
+R READ    >>findOne()
+U UPDATE
+D DELETE
+
+DOCUMENT
+INSERT :
+insertOne:
+db.collectionName.insertOne({key1:value1,key2:value2......,keyn:valuen})
+
+name age email 
+
+db.users.insertOne({name:"Pradeep",age:20,email:"pradeep@gmail.com"})
+db.users.insertOne({name:"Chandan",age:21,email:"chandan@gmail.com"})
+db.users.insertOne({name:"Poonam",age:23,email:"poonam@gmail.com"})
+db.users.insertOne({name:"GuviGeek",age:10,email:"guvigeek@gmail.com"})
+
+insertMany:
+db.collectionName.insertMany([
+    {key1:value1,key2:value2......,keyn:valuen},
+    {key1:value1,key2:value2......,keyn:valuen},
+    {key1:value1,key2:value2......,keyn:valuen},
+    {key1:value1,key2:value2......,keyn:valuen},
+    {key1:value1,key2:value2......,keyn:valuen},
+    {key1:value1,key2:value2......,keyn:valuen}
+    ...
+    ...
+    ...
+    {keyn`:valuen1,keyn2:valuen2......,keyn3:valuen3}
+])
+
+db.users.insertMany([
+    {name:"Akash",age:23,email:"akash@gmail.com"},
+    {name:"Hrushikesh",age:24,email:"hrushikesh@gmail.com"},
+    {name:"Sai",age:24,email:"sai@gmail.com"},
+    {name:"Vidya",age:24,email:"vidya@gmail.com"},
+    {name:"Jaswanth",age:24,email:"jaswanth@gmail.com"},
+    {name:"Preethi",age:24,email:"preethi@gmail.com"},
+])
+
+READ >>RETREIVE THE DATA
+
+findOne()
+find()
+db.collectionName.find({},{})
+DISPLAY ALL USERS
+>> SQL >> SELECT * FROM USERS
+>> MONGODB >> db.users.find({},{})
+
+db.collectionName.find({where clause||constraints||conditions},{selections of feildname})
+db.users.find({},{})
+
+_id: 1 /0 ||  1 select 0 dont select 
+DISPLAY NAME ,ID OF THE USERS
+>> SQL >> SELECT NAME,_ID FROM USERS
+>> MONGODB >> db.users.find({},{name:1,_id:1})
+
+DISPLAY NAME ,AGE OF THE USERS
+>> SQL >> SELECT NAME,age FROM USERS
+>> MONGODB >> db.users.find({},{name:1,age:1,_id:0})
+
+findOne()
+name:"Chandan"
+db.users.findOne({name:"Chandan"})
+db.users.findOne({name:"Akash"},{age:1,_id:0})
+db.users.findOne({age:24},{name:1,_id:0})
+
+db.users.find({age:24},{name:1,_id:0})
+
+DELETE
+deleteOne({})
+deleteMany({})
+
+db.collectionName.deleteOne({})
+db.users.deleteOne({age:24})
+db.users.find({},{name:1,age:1,_id:0})
+
+
+db.users.deleteMany({age:24})
+db.users.find({},{name:1,age:1,_id:0})
