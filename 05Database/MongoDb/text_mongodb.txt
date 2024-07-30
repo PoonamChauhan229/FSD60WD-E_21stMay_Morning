@@ -108,3 +108,90 @@ db.users.find({},{name:1,age:1,_id:0})
 
 db.users.deleteMany({age:24})
 db.users.find({},{name:1,age:1,_id:0})
+
+//delete the user where there is sai@gmail.com
+db.users.deleteOne({email:"sai@gmail.com"})
+
+update:
+  {
+    _id: ObjectId('66a74055b13f4fe4ef16c9c2'),
+    name: 'Vidya',
+    age: 24,
+    email: 'vidya@gmail.com'
+  },
+  //MongodbName
+
+updateOne
+db.users.updateOne({ email: 'vidya@gmail.com'},{$set:{name:"MongodbName"}})
+
+updateMany
+// Akash > age :55
+db.users.updateMany({name:"Akash"},{$set:{age:55}})
+
+
+comparision query operators
+$eq:
+$ne:
+
+$gt:
+$gte:
+
+$lt:
+$lte:
+
+$in:
+$nin:
+
+logical query operators
+$and
+$or
+$nor
+
+Users Collections
+db.users.find({name:{$eq:"John"}})
+db.users.find({name:{$eq:"Alice"}})
+db.users.find({age:{$eq:24}})
+
+Sales Collections >item ,price,size,qunatity,date
+db.sales.find({}) 
+'Cappuccino'
+db.sales.find({item:{$eq:"Cappuccino"}})
+
+//size :"Tall"
+db.sales.find({size:{$eq:"Tall"}})
+
+db.sales.find({size:{$ne:"Tall"}})
+db.orders.find({items:{$ne:"Laptop"}})
+
+$gt:
+$gte:
+
+$lt:
+$lte:
+
+gt : 25 age
+db.users.find({age:{$gt:25}})
+db.users.find({age:{$gte:24}})
+db.users.find({age:{$lt:25}})
+db.users.find({age:{$lte:24}})
+
+Task:
+order:
+orderAmount  :200
+all 4 
+
+price products
+sales price 
+
+Tall Short
+$in:["Tall","Short"]
+db.sales.find({size:{$in:["Tall","Short"]}})
+db.sales.find({item:{$in:["Americanos","Lattes"]}})
+db.sales.find({item:{$nin:["Americanos","Lattes"]}})
+
+//users
+age >28,34,42
+db.users.find({age:{$in:[28,34,42]}})
+
+name >"GuviGeek",bob
+db.users.find({name:{$in:["Bob","guvigeek"]}})
