@@ -142,6 +142,10 @@ $lte:
 $in:
 $nin:
 
+NOT: 1 condition
+age: 28
+db.users.find({age:{$not:{$eq:28}}})
+
 logical query operators
 $and
 $or
@@ -195,3 +199,176 @@ db.users.find({age:{$in:[28,34,42]}})
 
 name >"GuviGeek",bob
 db.users.find({name:{$in:["Bob","guvigeek"]}})
+
+users:
+and : all conditions should match
+
+name:"John" 
+age:28
+$and:[{name:"John"},{age:28}]
+db.users.find({$and:[{name:"John"},{age:28}]})
+
+name : John
+age : $gt 25
+
+$and:[{name:"John"},{age:{$gt:25}}]
+db.users.find({$and:[{name:"John"},{age:{$gt:25}}]})
+
+sales collection:
+item:Americanos
+price:5
+
+$and:[{item:"Americanos"},{price:5}]
+db.sales.find({$and:[{item:"Americanos"},{price:5}]})
+
+
+price gt 5
+quantity lt 30
+
+$and:[{price:{$gt:5}},{quantity:{$lt:30}}]
+db.sales.find({$and:[{price:{$gt:5}},{quantity:{$lt:30}}]})
+_______________________________________________
+// OR:atleast 1 conditions
+db.users.find({$or:[{name:"John"},{age:25}]})
+
+products
+name:xPhone
+price:899
+
+$or:[{name:"xPhone"},{price:899}]
+db.products.find({$or:[{name:"xPhone"},{price:899}]})
+
+//orders collection
+name SmartTablet
+price:899
+_______________________________________________
+
+nor: none of the conditions
+db.users.find({$nor:[{name:"John"},{age:25}]})
+
+age :gt 30
+name :Eve
+$nor:[{age:{$gt:30}},{name:"Eve"}]
+db.users.find({$nor:[{age:{$gt:30}},{name:"Eve"}]})
+
+//orders collection
+name SmartTablet
+price:899
+
+Aggregate Functions:
+Aggregation Pipeline
+====
+$match
+$project
+$group  > sum min max avg
+$sort 1/-1
+$skip
+
+age:10
+db.users.find({age:10})
+
+db.users.aggregate([
+  {$match:{age:10}}
+])
+
+age gt 10
+project name
+db.users.aggregate([
+  {$match:{age:{$gt:10}}},
+  {$project:{_id:0,name:1,age:1}}
+])
+
+$gt 20
+
+$group:
+
+// total age: sum > $sum
+db.users.aggregate([
+  {$group:{
+    _id:null,
+    totalAge:{$sum:"$age"}
+  }}
+])
+db.users.aggregate([
+  {$group:{
+    _id:null,
+    totalAverage:{$avg:"$age"}
+  }}
+])
+//sales: totalPrice
+// totalPrice
+
+db.sales.aggregate([
+  {$group:{
+    _id:"$item",
+    totalPrice:{$sum:"$price"}
+  }}
+])
+
+//products
+price $gt 800
+// group
+
+db.products.aggregate([
+  {$match:{price:{$gt:800}}},
+  {$group:{
+    _id:"$name",
+    totalPrice:{$sum:"$price"}
+  }}
+])
+
+//gte:100
+//group > items > sum
+
+db.sales.aggregate([
+  {$match:{price:{$gte:10}}},
+  {$group:{
+    _id:"$item",
+    totalSum:{$sum:"$price"}
+  }},
+  {$skip:1},
+  {$limit:2}
+])
+
+db.sales.aggregate([
+  {$match:{price:{$gte:10}}},
+  {$group:{
+    _id:"$item",
+    totalSum:{$sum:"$price"},
+  }},
+  {$sort:{totalSum:1}},
+  {$skip:1},
+  {$limit:2}
+ ])
+
+ db.sales.aggregate([
+ {$sort:{item:1}}
+ ])
+
+ db.sales.aggregate([
+  {$match:{price:{$gte:10}}},
+  {$group:{
+    _id:"$item",
+    totalSum:{$sum:"$price"},
+    totalAvg:{$avg:"$price"},
+    minPrice:{$min:"$price"},
+    maxPrice:{$max:"$price"},
+    totalCount:{$sum:1}
+  }}
+ ])
+
+db.sales.aggregate([
+  {$group:{
+    _id:"$item",
+    totalCount:{$sum:1}
+  }}
+])
+
+
+db.sales.aggregate([
+  {$group:{
+    _id:null,
+    totalCount:{$sum:1}
+  }}
+])
+
