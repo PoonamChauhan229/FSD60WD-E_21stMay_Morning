@@ -1,0 +1,63 @@
+MERN STACK ?
+set of technologies used for building the web application
+
+MERN :MONGODB EXPRESS REACT NODE
+
+OTHER STACK:
+MEAN:MONGODB EXPRESS ANGULAR NODE
+MEVN:MONGODB EXPRESS VUE NODE
+LAMP:LINUX APACHE MYSQL PHP
+
+
+NODE : NOT AN LANGUAGE 
+     : RUNTIME ENVIRONMENT FOR RUNNING JS CODE OUTSIDE THE BROWSER
+
+JS : USING BROWSER >> V8 ENGINE IN THE BROWSER
+
+BROWSER(WRAPPER)                   NODEJS(WRAPPER)
+  ||                                 ||                          
+V8 ENGINE                          V8 ENGINE 
+
+https://nodejs.org/en
+
+>> CMD
+C:\Users\user>node -v
+v20.12.0
+
+C:\Users\user>node
+Welcome to Node.js v20.12.0.
+Type ".help" for more information.
+
+> 2+2
+4
+
+> 34+89
+123
+
+> 56+78+89
+223
+
+> "Poonam".toUpperCase()
+'POONAM'
+
+> "Poonam".toLowerCase()
+'poonam'
+
+> "Poonam guvi geek".toUpperCase()
+'POONAM GUVI GEEK'
+
+> "Poonam guvi geek".indexOf("guvi")
+7
+
+window
+document
+
+global 
+process
+
+process.exit()
+
+Packages:
+in built : filesystem core node modules 
+third party : after suceesful installation npm i packageName
+custom Packages : we create it 
