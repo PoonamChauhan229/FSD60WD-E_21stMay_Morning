@@ -1,0 +1,27 @@
+API :
+
+HTTP METHODS:
+
+EXPRESS: HELPS US TO CREATE 
+
+CREATE an folder  > 38Day
+Terminal > cd 38Day
+
+>>Initialize 
+npm init -y
+
+>>create a entry point file >> index.js/sever.js/app.js/main.js
+>> index.js
+
+
+>> npm i nodemon
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js",     npm run start
+    "dev":"nodemon index.js"     npm run dev
+  }, 
+
+
+
+
