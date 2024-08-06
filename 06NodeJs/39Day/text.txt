@@ -1,0 +1,56 @@
+API :
+
+HTTP METHODS:
+
+EXPRESS: HELPS US TO CREATE 
+
+CREATE an folder  > 38Day
+Terminal > cd 38Day
+
+>>Initialize 
+npm init -y
+
+>>create a entry point file >> index.js/sever.js/app.js/main.js
+>> index.js
+
+
+>> npm i nodemon
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js",     npm run start
+    "dev":"nodemon index.js"     npm run dev
+  }, 
+
+
+restcountries
+https://restcountries.com
+root route
+
+http://localhost:3000/
+root route
+
+http://localhost:3000/home
+mutliple route
+/home
+/about
+/services
+/contactus
+/products // array of object
+
+
+using httpmethods
+get method: retrive 
+
+app.get('/',(req,res)=>{
+  res.send("Hello World")
+})
+
+req: request
+res: response
+res.send("")
+
+?q=mumbai&apiid=
+?search=tool
+//Query string
+console.log(req.query)
