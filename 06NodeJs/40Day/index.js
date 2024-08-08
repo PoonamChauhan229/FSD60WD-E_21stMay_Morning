@@ -100,7 +100,25 @@ app.delete('/task/:id',async(req,res)=>{
 })
 //movies
 
-//update 
+//update > PUT/PATCH > IDs
+app.put('/users/:id',async(req,res)=>{
+    //req.query
+    //req.params
+    //req.body
+    //{new:true,runValidators:true}>> we want to update in first call 
+    //>>  //req.params  //req.body
+    const updateUser=await User.findByIdAndUpdate(req.params.id,req.body,{new:true,runValidators:true})
+    res.send(updateUser)
+
+})
+// task
+app.put('/task/:id',async(req,res)=>{
+    const updateTask=await Task.findByIdAndUpdate(req.params.id,req.body,{new:true,runValidators:true})
+    res.send(updateTask)
+})
+
+//movies +10+5 
+
 
 
 app.listen(PORT,()=>{
