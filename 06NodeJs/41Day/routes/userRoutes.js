@@ -42,6 +42,20 @@ router.post('/adduser',async(req,res)=>{
     }
 })
 
+router.post('/signin',async(req,res)=>{
+    //email   >> verify 
+    //password >> password
+    let user=await User.findOne({email:req.body.email})
+    // res.send({"User":user})
+    console.log(user)
+    //password
+    const isValidPassword=await bycrypt.compare(req.body.password,user.password)
+    console.log(isValidPassword)
+
+    // work on token >> userModel +signin Route
+    // User Relationship Model 
+})
+
 //signin route
 
 //edit > get by id /:id
