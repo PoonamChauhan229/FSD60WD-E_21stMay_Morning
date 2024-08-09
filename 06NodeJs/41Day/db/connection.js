@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 const connection=async()=>{
-    await mongoose.connect('mongodb://localhost:27017/fsd60wd_01_mongoose')
+    await mongoose.connect(process.env.MONGO_URL)
     console.log("We are connected to Mongodb")
 }
 // connection()

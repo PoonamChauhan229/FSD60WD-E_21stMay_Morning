@@ -61,3 +61,9 @@ db  > connection to mongodb
 model > all the models
 route > all the routing part
 index.js  > main file
+
+
+Authentication:
+Password:
+Signup Route >> POstman
+

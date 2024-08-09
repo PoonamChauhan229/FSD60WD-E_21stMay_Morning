@@ -1,6 +1,7 @@
 const User=require('../model/userModel')
 const express=require('express')
 const router=express.Router()
+const bycrypt=require('bcryptjs')
 //GET 
 router.get('/users',async(req,res)=>{
     // we want data from db
@@ -15,18 +16,33 @@ router.get('/users',async(req,res)=>{
     }
 })
     
-//POST 
+//POST  >> SIGNUP 
 router.post('/adduser',async(req,res)=>{
     //request > req
     // console.log(req.body)
     try{
-        const userData=new User(req.body)
+        let user=await User.findOne({email:req.body.email})
+        console.log(user)
+        if(user){
+            return res.send({"message":"User Already exists"})//early return
+        }
+       const salt=await bycrypt.genSalt(10)
+       const hashedPassword=await bycrypt.hash(req.body.password,salt) 
+        const userData=new User({
+            name:req.body.name,
+            age:req.body.age,
+            email:req.body.email,
+            phone_number:req.body.phone_number,
+            password:hashedPassword
+        })
         userData.save()
         res.send(userData)
     }catch(e){
         res.send("Some internal error")
     }
 })
+
+//signin route
 
 //edit > get by id /:id
 //users
