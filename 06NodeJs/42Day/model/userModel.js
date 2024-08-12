@@ -10,6 +10,16 @@ const userSchema=new mongoose.Schema({
     password:{type:String,required:true}
 })
 
+// userSchema   >> genrateToken
+userSchema.methods.generateToken=async function(req,res,next){
+    const user=this
+    const token=jwt.sign({_id:user._id},"nodejs")
+    //console.log(token)
+    return token
+   
+}
+
+
 const User=mongoose.model("User",userSchema)
 
 module.exports=User

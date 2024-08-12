@@ -13,9 +13,20 @@ app.use(cors())
 const PORT=process.env.PORT
 connection()
 app.use(express.json())
+// app.use((req,res,next)=>{
+//     console.log(req.method, req.path)
+//     next()
+// })
 
+// app.use((req,res,next)=>{
+//     res.send("Server is down,come back later")
+// })
 app.use(userRouter)
 app.use(taskRouter)
+
+
+// write something  ====>  executes
+// write something  ===>  some function to exectue ====>  final execution
 
 //READ
 app.get('/',(req,res)=>{

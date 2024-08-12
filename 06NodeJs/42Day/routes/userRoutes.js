@@ -2,6 +2,7 @@ const User=require('../model/userModel')
 const express=require('express')
 const router=express.Router()
 const bycrypt=require('bcryptjs')
+const auth=require('../middleware/auth')
 //GET 
 //POST  >> SIGNUP 
 router.post('/adduser',async(req,res)=>{
@@ -40,55 +41,39 @@ router.post('/signin',async(req,res)=>{
     const isValidPassword=await bycrypt.compare(req.body.password,user.password)
     //console.log(isValidPassword)
 
-    if(isValidPassword){
+     // work on token >> userModel
+     const token=await user.generateToken()
+     console.log(token)
+
+
+    if(token){
         res.send({
             message:"User Email Password Matched Successfully",
-            user:user
+            user:user,
+            token:token
         })
     }
 
   
     // User Relationship Model 
 })
-router.get('/users',async(req,res)=>{
-    // we want data from db
-    // db.users.find({})
-    // Model.find({})  >> mongoose 
-    //try catch
-    try{
-        const getAllUsers=await User.find({})
-        res.send(getAllUsers)
-    }catch(e){
-        res.send("Users not found",e)
-    }
+
+// My Own Profile 
+
+router.get('/users/me',auth,async(req,res)=>{
+  //specific user who has logged in
+  // token
+  console.log(req.user)
+  const getProfile=await User.findById(req.user._id)
+  res.send(getProfile)
+
 })
-
-//edit > get by id /:id
-//users
-router.get('/users/:id',async(req,res)=>{
-    // req.query
-    // req.params 
-    //console.log(req.params.id)
-    //db.users.find({_id:req.params.id})// Object_id
-    // const getUser=await User.find({_id:req.params.id})
-    try{
-        const getUser=await User.findById(req.params.id)
-    res.send(getUser)
-    }catch(e){
-        res.send("Some internal error")
-    }
-
-}) 
     
-//update > PUT/PATCH > IDs
-router.put('/users/:id',async(req,res)=>{
-    //req.query
-    //req.params
-    //req.body
-    //{new:true,runValidators:true}>> we want to update in first call 
-    //>>  //req.params  //req.body
+
+//update my profile> PUT/PATCH > IDs
+router.put('/users/me',auth,async(req,res)=>{
    try{
-        const updateUser=await User.findByIdAndUpdate(req.params.id,req.body,{new:true,runValidators:true})
+        const updateUser=await User.findByIdAndUpdate(req.user._id,req.body,{new:true,runValidators:true})
         res.send(updateUser)
    }catch(e){
     res.send("Some internal error")
@@ -97,9 +82,10 @@ router.put('/users/:id',async(req,res)=>{
 })
 
 //delete Method
-router.delete('/users/:id',async(req,res)=>{
+//auth >> 
+router.delete('/users/me',auth,async(req,res)=>{
     try{
-        const deleteUser=await User.findByIdAndDelete(req.params.id)
+        const deleteUser=await User.findByIdAndDelete(req.user._id)
         console.log(deleteUser)
             if(deleteUser){                    
                 res.send({
@@ -118,5 +104,13 @@ router.delete('/users/:id',async(req,res)=>{
 
 module.exports=router
 
+
+// Pradeep > 10 task
+// Vidya   > 5 task
+
+// 15 task 
     
+// all 15 task we are able to crud 
+// Pardeep > 10 tak >> 10 task  >>> crud only those 10 task
+// user task relationship  
     
