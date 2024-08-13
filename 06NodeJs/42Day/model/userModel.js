@@ -10,6 +10,20 @@ const userSchema=new mongoose.Schema({
     password:{type:String,required:true}
 })
 
+//relationship between 2 enitities
+// 2 tables in mysql       >> primary key >> foriegn key
+// 2 collection in mongodb >>localFeild   >> foreign feild
+// virtually >> not going to store as well
+
+userSchema.virtual('taskRel',{
+    ref:"Task",
+    localField:"_id",
+    foreignField:"owner"
+})
+
+
+
+
 // userSchema   >> genrateToken
 userSchema.methods.generateToken=async function(req,res,next){
     const user=this

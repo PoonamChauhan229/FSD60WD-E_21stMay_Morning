@@ -67,3 +67,19 @@ Authentication:
 Password:
 Signup Route >> POstman
 
+
+Whenever
+TO DO APP:
+
+User logged in
+>>add task edit task update task delete task  > CRUD
+user1: 10 tasks
+user2: 5 tasks
+user3: 8 tasks
+>> 23 tasks
+
+1st >> user >> [{task id}]
+2nd >> task >> {user_id}
+
+2nd option would easy :
+// update the task schema
