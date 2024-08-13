@@ -55,7 +55,7 @@ router.put('/task/:id',auth,async(req,res)=>{
 })
 
 //delete Method   
-//findOne   >>  15 min
+//findOneAndDelete   >>  15 min
 router.delete('/task/:id',auth,async(req,res)=>{
    try{
     const deleteTask= await Task.findOneAndDelete({_id:req.params.id, owner:req.user._id})   
